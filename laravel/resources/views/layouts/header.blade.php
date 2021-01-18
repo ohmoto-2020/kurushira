@@ -1,4 +1,4 @@
-<h1 class="header__left">クルシラ〜みんなで育てる車アプリ〜</h1>
+<h1 class="header__left">クルシラ</h1>
 @if (Route::has('login'))
 <div class="header__right">
 @auth
@@ -10,5 +10,6 @@
     <a href="{{ route('register') }}">ユーザー登録</a>
   @endif
 @endauth
-</div>
 @endif
+  <a href="">サイト詳細</a>
+</div>

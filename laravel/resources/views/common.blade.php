@@ -9,7 +9,7 @@
   <title>@yield('title')</title>
 </head>
 
-<body>
+
   <header class="header">
     @include('layouts.header')
   </header>

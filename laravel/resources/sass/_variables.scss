@@ -7,6 +7,7 @@ $line-height-base: 1.6;
 // Colors
 $header: rgb(7, 128, 128);
 $white: rgb(255,255,255);
+$main: rgb(10,184,183);
 $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
@@ -27,9 +28,11 @@ html, body {
   font-feature-settings: "palt";
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   box-sizing: border-box;
   color: $white;
+  width: 100%;
+  height: 100vh;
 }
 
 *,h1,h2,h3,h4,h5,h6,p,ul,li{
