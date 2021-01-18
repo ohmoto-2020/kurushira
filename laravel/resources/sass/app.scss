@@ -9,6 +9,24 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-h1 {
-  color: red;
+
+.header {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: $header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__left {
+    padding-left: 1rem;
+  }
+  &__right {
+    padding-right: 1rem;
+    a {
+      color: $white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1rem;
+    }
+  }
 }
