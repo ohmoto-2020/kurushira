@@ -22,6 +22,9 @@
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
   &__left {
     padding-left: 1rem;
+    a {
+      color: $white;
+    }
   }
   &__right {
     padding-right: 1rem;
@@ -34,8 +37,8 @@
   }
 }
 
-
 .container {
+  color:red;
   margin-top: 3rem;
   &__card {
     text-align: center;
@@ -48,7 +51,7 @@
       padding: 0.5rem 0;
       margin-bottom: 1rem;
       background-color: $main;
-      border-bottom: solid 2px $header;
+      border-bottom: solid 1px $header;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
        0 2px 10px 0 rgba(0,0,0,.12);
       border-radius: 5px 5px 0 0;

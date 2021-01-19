@@ -11,14 +11,13 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
     return view('star.index');
 });
 
+# ユーザー新規登録、ログイン、ログアウト
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/myPage', 'HomeController@myPage')->name('myPage');
+Route::get('/about', 'HomeController@about')->name('about');
