@@ -29,11 +29,11 @@ class HomeController extends Controller
 
     public function about()
     {
-      return view('star.about');
+      return view('page.about');
     }
 
     public function getLogout(){
       Auth::logout();
-      return redirect()->route('star.index');
+      return redirect()->route('page.index');
     }
 }

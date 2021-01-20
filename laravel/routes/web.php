@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('star.index');
+    return view('page.index');
 });
 
 # ユーザー新規登録、ログイン、ログアウト
