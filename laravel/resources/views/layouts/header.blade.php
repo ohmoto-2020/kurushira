@@ -3,7 +3,11 @@
 <div class="header__right">
 @auth
   <a href="{{ url('/myPage') }}">マイページ</a>
-  <a href="{{ route('logout') }}">ログアウト</a>
+  <!-- <a href="{{ route('logout') }}">ログアウト</a> -->
+  <form action="{{ route('logout') }}" method="POST">
+    @csrf
+  <input type="submit" value='送信'>
+  </form>
 @else
   <a href="{{ route('login') }}">ログイン</a>
 

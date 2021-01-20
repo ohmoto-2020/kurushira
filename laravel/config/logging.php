@@ -3,7 +3,16 @@
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
+// use Illuminate\Support\Facades\Log;
 
+// Log::emergency($message);
+// Log::alert($message);
+// Log::critical($message);
+// Log::error($message);
+// Log::warning($message);
+// Log::notice($message);
+// Log::info($message);
+// Log::debug($message);
 return [
 
     /*
@@ -37,8 +46,17 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['stdout'],
             'ignore_exceptions' => false,
+        ],
+
+        'stdout' => [
+            'driver' => 'monolog',
+            'handler' => StreamHandler::class,
+            'with' => [
+                'stream' => 'php://stdout',
+            ],
+            'level' => 'debug',
         ],
 
         'single' => [
@@ -100,5 +118,4 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
     ],
-
 ];
