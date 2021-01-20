@@ -28,18 +28,36 @@
   }
   &__right {
     padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
     a {
       color: $white;
       font-size: 1.3rem;
       font-weight: bold;
       padding: 1rem;
+      margin: 0 1rem;
+    }
+    .logout {
+      &__button {
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 1rem;
+        margin: 0 1rem;
+        border: none;
+        outline: none;
+        background-color:transparent;
+        cursor: pointer;
+      }
     }
   }
 }
 
 .container {
-  color:red;
   margin-top: 3rem;
+  h2 {
+    color: red;
+  }
   &__card {
     text-align: center;
     width: 40%;

@@ -22,6 +22,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function index()
+    {
+      return view('page.index');
+    }
+
     public function myPage()
     {
       return view('auth.myPage');

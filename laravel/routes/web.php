@@ -18,6 +18,6 @@ Route::get('/', function () {
 # ユーザー新規登録、ログイン、ログアウト
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/index', 'HomeController@index')->name('index');
 Route::get('/myPage', 'HomeController@myPage')->name('myPage');
 Route::get('/about', 'HomeController@about')->name('about');

@@ -4,9 +4,9 @@
 @auth
   <a href="{{ url('/myPage') }}">マイページ</a>
   <!-- <a href="{{ route('logout') }}">ログアウト</a> -->
-  <form action="{{ route('logout') }}" method="POST">
+  <form class="logout" action="{{ route('logout') }}" method="POST">
     @csrf
-  <input type="submit" value='送信'>
+    <input class="logout__button" type="submit" value='ログアウト'>
   </form>
 @else
   <a href="{{ route('login') }}">ログイン</a>

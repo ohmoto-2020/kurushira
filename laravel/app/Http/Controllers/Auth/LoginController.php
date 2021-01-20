@@ -27,7 +27,7 @@ class LoginController extends Controller
      * @var string
      */
 
-    protected $redirectTo = '/';//indexへリダイレクト
+    protected $redirectTo = RouteServiceProvider::HOME;//indexへリダイレクト
 
     /**
      * Create a new controller instance.
