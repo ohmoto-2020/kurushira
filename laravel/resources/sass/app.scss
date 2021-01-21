@@ -67,7 +67,6 @@
     &__header {
       font-size: 1.5rem;
       padding: 0.5rem 0;
-      margin-bottom: 1rem;
       background-color: $main;
       border-bottom: solid 1px $header;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
@@ -76,6 +75,39 @@
     }
     &__body {
       color: black;
+      padding: 3rem 0;
+      &__box {
+        margin-bottom: 1rem;
+        &__form {
+          margin: 0 auto;
+          width: 350px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          .text-danger {
+            color: red;
+          }
+          .form-control {
+            padding: 0.3rem 0.5rem;
+            height: calc(1.5em + .75rem + 2px);
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .send{
+      width: 120px;
+      color: $white;
+      font-size: 1rem;
+      padding: 0.3rem;
+      background-color: $main;
+      line-height: 50px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
+      0 2px 10px 0 rgba(0,0,0,.12);
+      border-radius: 5px;
     }
   }
 }
