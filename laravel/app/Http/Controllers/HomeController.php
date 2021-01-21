@@ -13,8 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-      $this->middleware('auth');
-      $this->middleware('guest')->except('logout');
+      $this->middleware('auth')->except('about');
+      // $this->middleware('guest')->except('logout');
     }
 
     /**
@@ -37,8 +37,4 @@ class HomeController extends Controller
       return view('page.about');
     }
 
-    public function getLogout(){
-      Auth::logout();
-      return redirect()->route('page.index');
-    }
 }
