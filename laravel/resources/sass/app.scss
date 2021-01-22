@@ -24,7 +24,7 @@
   align-items: center;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
   &__left {
-    padding-left: 1rem;
+    padding-left: 2rem;
     a {
       color: $white;
     }
@@ -33,7 +33,7 @@
     padding-right: 1rem;
     display: flex;
     flex-direction: row;
-    a {
+    &__list {
       color: $white;
       font-size: 1.3rem;
       font-weight: bold;
