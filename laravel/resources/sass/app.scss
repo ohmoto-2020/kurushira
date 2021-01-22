@@ -60,6 +60,71 @@
   }
 }
 
+// -----------------------
+// 認証/main
+// -----------------------
+.container {
+  margin-top: 3rem;
+  text-align: center;
+  h2 {
+    color: red;
+  }
+  .note {
+    color: red;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  &__card {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    &__header {
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+      background-color: $main;
+      border-bottom: solid 1px $header;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
+       0 2px 10px 0 rgba(0,0,0,.12);
+      border-radius: 5px 5px 0 0;
+    }
+    &__body {
+      color: black;
+      padding: 3rem 0;
+      &__box {
+        margin: 0 auto 1rem;
+        width: 350px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        .text-danger {
+          color: red;
+        }
+        .form-control {
+          padding: 0.3rem 0.5rem;
+          height: calc(1.5em + .75rem + 2px);
+          font-size: 1rem;
+        }
+      }
+    }
+    .send {
+      width: 120px;
+      color: $white;
+      font-size: 1rem;
+      padding: 0.3rem;
+      margin-top: 1rem;
+      background-color: $main;
+      line-height: 50px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
+      0 2px 10px 0 rgba(0,0,0,.12);
+      border-radius: 5px;
+    }
+  }
+}
 
 // -----------------------
 // index
@@ -118,69 +183,6 @@
           }
         }
       }
-    }
-  }
-}
-
-
-// -----------------------
-// 認証
-// -----------------------
-.container {
-  margin-top: 3rem;
-  h2 {
-    color: red;
-  }
-  &__card {
-    text-align: center;
-    width: 40%;
-    margin: 0 auto;
-    box-shadow: $box-shadow;
-    border-radius: 5px;
-    &__header {
-      font-size: 1.5rem;
-      padding: 0.5rem 0;
-      background-color: $main;
-      border-bottom: solid 1px $header;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-       0 2px 10px 0 rgba(0,0,0,.12);
-      border-radius: 5px 5px 0 0;
-    }
-    &__body {
-      color: black;
-      padding: 3rem 0;
-      &__box {
-        margin-bottom: 1rem;
-        &__form {
-          margin: 0 auto;
-          width: 350px;
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          .text-danger {
-            color: red;
-          }
-          .form-control {
-            padding: 0.3rem 0.5rem;
-            height: calc(1.5em + .75rem + 2px);
-            font-size: 1rem;
-          }
-        }
-      }
-    }
-    .send{
-      width: 120px;
-      color: $white;
-      font-size: 1rem;
-      padding: 0.3rem;
-      background-color: $main;
-      line-height: 50px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-      0 2px 10px 0 rgba(0,0,0,.12);
-      border-radius: 5px;
     }
   }
 }
