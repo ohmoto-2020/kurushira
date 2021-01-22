@@ -6,17 +6,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- CSS -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2353a33daa.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
   </head>
 
     <header class="header">
-    @include('layouts.header')
+      @include('layouts.header')
     </header>
 
     <main>
-      <div>
       @yield('content')
-      </div>
     </main>
 
   </body>

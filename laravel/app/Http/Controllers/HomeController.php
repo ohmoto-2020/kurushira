@@ -37,4 +37,9 @@ class HomeController extends Controller
       return view('page.about');
     }
 
+    public function main()
+    {
+      return view('page.main');
+    }
+
 }

@@ -47,7 +47,7 @@ a {
 
 .header {
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.7rem 0;
   background-color: #078080;
   display: flex;
   justify-content: space-between;
@@ -77,6 +77,11 @@ a {
   margin: 0 1rem;
 }
 
+.header__right a:hover {
+  color: #0ab8b7;
+  transition: 0.5s;
+}
+
 .header__right .logout__button {
   color: white;
   font-size: 1.3rem;
@@ -87,6 +92,74 @@ a {
   outline: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.main {
+  display: flex;
+  margin-top: 5rem;
+  color: #222222;
+}
+
+.main .card {
+  width: 320px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 2.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.main .card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: #078080;
+  padding: 0.8rem 0;
+  text-align: center;
+}
+
+.main .card__title .fas {
+  margin-right: 1rem;
+}
+
+.main .card__list {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.main .card__list li {
+  list-style-position: inside;
+}
+
+.main .card .button__group {
+  margin: 2rem auto;
+  width: 180px;
+}
+
+.main .card .button__group__induction {
+  text-align: center;
+}
+
+.main .card .button__group__start {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
+  height: 60px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 60px;
+  background-color: #fce300;
+  border-radius: 150px;
+  box-shadow: 0 2px 5px 0 rgba(22, 43, 29, 0.2), 0 2px 10px 0 rgba(22, 44, 29, 0.2);
+}
+
+.main .card .button__group__start:hover {
+  background-color: rgba(255, 238, 0, 0.9);
+  transition: 0.2s;
 }
 
 .container {
