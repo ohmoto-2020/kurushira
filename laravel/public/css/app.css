@@ -145,6 +145,10 @@ a {
   flex-direction: column;
 }
 
+.container__card__body__box .invalid-feedback {
+  color: red;
+}
+
 .container__card__body__box .text-danger {
   color: red;
 }
