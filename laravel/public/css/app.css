@@ -94,6 +94,11 @@ a {
   cursor: pointer;
 }
 
+.header__right .logout__button:hover {
+  color: #0ab8b7;
+  transition: 0.5s;
+}
+
 .container {
   margin-top: 3rem;
   text-align: center;
@@ -164,6 +169,11 @@ a {
   border-radius: 5px;
 }
 
+.container__card .send:hover {
+  background-color: rgba(15, 202, 202, 0.7);
+  transition: 0.2s;
+}
+
 .main {
   display: flex;
   margin-top: 5rem;
@@ -228,7 +238,7 @@ a {
 }
 
 .main .card .button__group__start:hover {
-  background-color: rgba(255, 238, 0, 0.9);
+  background-color: rgba(172, 166, 94, 0.7);
   transition: 0.2s;
 }
 
