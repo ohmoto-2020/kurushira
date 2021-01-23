@@ -27,6 +27,7 @@ ul,
 li {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 a {
@@ -197,10 +198,6 @@ a {
   text-align: center;
 }
 
-.main .card__title .fas {
-  margin-right: 1rem;
-}
-
 .main .card__list {
   padding: 0.5rem;
   font-size: 1.2rem;
@@ -208,6 +205,10 @@ a {
 
 .main .card__list li {
   list-style-position: inside;
+}
+
+.main .card .fas {
+  margin-right: 0.6rem;
 }
 
 .main .card .button__group {

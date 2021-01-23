@@ -154,16 +154,18 @@
       background-color: $header;
       padding: .8rem 0;
       text-align: center;
-      .fas {
-        margin-right: 1rem;
-      }
     }
     &__list {
       padding: 0.5rem;
       font-size: 1.2rem;
       li {
         list-style-position: inside;
+
+        // vertical-align: baseline;
       }
+    }
+    .fas {
+      margin-right: 0.6rem;
     }
     .button {
       &__group {
