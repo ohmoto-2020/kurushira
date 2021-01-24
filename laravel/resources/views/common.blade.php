@@ -6,7 +6,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- CSS -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <!-- font awesome -->
     <script src="https://kit.fontawesome.com/2353a33daa.js" crossorigin="anonymous"></script>
+    <!-- ファビコン -->
+    <link rel="icon" href="{{ asset('/favicon.ico') }}">
+    <!-- タイトル -->
     <title>@yield('title')</title>
   </head>
 
