@@ -1,5 +1,5 @@
 insert into
- キャデラックrs(name,maker,price,style,size,country,uses)
+ cars(name,maker,price,style,size,country,uses)
   values(
   -- 国産
   -- トヨタ
