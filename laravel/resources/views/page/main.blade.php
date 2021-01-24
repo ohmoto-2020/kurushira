@@ -41,7 +41,9 @@
           <option value="スポーツ">スポーツ</option>
         </select>
       </div>
-      <button type="submit" class="send" value="次へ">結果を見る</button>
+      <div class="container__card__body__button">
+        <button type="submit" class="send" value="次へ">結果を見る</button>
+      </div>
     </div>
   </form>
 </div>

@@ -29,8 +29,12 @@
 						</label>
 					</div>
 				</div>
-
-				<button type="submit" class="send">ログイン</button>
+				<div class="container__card__body__button">
+					<button type="submit" class="send">ログイン</button>
+					<button class="send">
+						<a href="{{ route('login.guest') }}">ゲストログイン</a>
+					</button>
+				</div>
 			</form>
 		</div>
 	</div>

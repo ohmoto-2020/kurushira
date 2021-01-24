@@ -114,24 +114,32 @@
           font-size: 1rem;
         }
       }
-    }
-    .send {
-      width: 120px;
-      color: $white;
-      font-size: 1rem;
-      padding: 0.3rem;
-      margin-top: 1rem;
-      background-color: $main;
-      line-height: 50px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-      0 2px 10px 0 rgba(0,0,0,.12);
-      border-radius: 5px;
-      &:hover {
-        background-color: rgba(rgb(15, 202, 202), 0.7);
-        transition: 0.2s;
+      &__button {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        .send {
+          width: 120px;
+          color: $white;
+          font-size: 1rem;
+          padding: 0.3rem;
+          margin: 0 2rem;
+          background-color: $main;
+          line-height: 50px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
+          0 2px 10px 0 rgba(0,0,0,.12);
+          border-radius: 5px;
+          a {
+            color: $white;
+          }
+          &:hover {
+            background-color: rgba(rgb(15, 202, 202), 0.7);
+            transition: 0.2s;
+          }
+        }
       }
     }
   }

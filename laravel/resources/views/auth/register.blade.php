@@ -54,10 +54,11 @@
 					<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="※再入力してください">
 
 				</div>
-
-				<button type="submit" class="send">
-					{{ __('ユーザー登録') }}
-				</button>
+				<div class="container__card__body__button">
+					<button type="submit" class="send">
+						{{ __('ユーザー登録') }}
+					</button>
+				</div>
 			</form>
 		</div>
 	</div>

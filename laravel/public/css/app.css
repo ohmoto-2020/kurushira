@@ -159,12 +159,18 @@ a {
   font-size: 1rem;
 }
 
-.container__card .send {
+.container__card__body__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.container__card__body__button .send {
   width: 120px;
   color: white;
   font-size: 1rem;
   padding: 0.3rem;
-  margin-top: 1rem;
+  margin: 0 2rem;
   background-color: #0ab8b7;
   line-height: 50px;
   border: none;
@@ -174,7 +180,11 @@ a {
   border-radius: 5px;
 }
 
-.container__card .send:hover {
+.container__card__body__button .send a {
+  color: white;
+}
+
+.container__card__body__button .send:hover {
   background-color: rgba(15, 202, 202, 0.7);
   transition: 0.2s;
 }
