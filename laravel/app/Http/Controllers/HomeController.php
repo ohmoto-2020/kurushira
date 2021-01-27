@@ -42,9 +42,4 @@ class HomeController extends Controller
       return view('page.main');
     }
 
-    public function result()
-    {
-      return view('page.result');
-    }
-
 }

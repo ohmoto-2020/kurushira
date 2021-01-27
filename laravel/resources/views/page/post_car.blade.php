@@ -9,13 +9,17 @@
     <div class="section__card__maker">
       @foreach($car_array as $maker=>$cars)
       <div class="section__card__maker__box">
-        <label for="{{ $maker }}">{{ $maker }}</label>
-        <select class="control" name="{{ $maker }}" id="{{ $maker }}">
-        @foreach($cars as $car)
+        <div class="section__card__maker__box__form">
+          <input type="radio" name="maker" value="{{ $maker }}" id="{{ $maker}}">
+          <label for="{{ $maker }}">{{ $maker }}</label>
+        </div>
+        <select name="{{ $maker }}" id="{{ $maker }}">
+          <option value="">---------</option>
+          @foreach($cars as $car)
           <option value="車">
-          {{ $car['name'] }}
+            {{ $car['name'] }}
           </option>
-        @endforeach
+          @endforeach
         </select>
       </div>
       @endforeach

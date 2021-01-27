@@ -24,6 +24,6 @@ Route::get('guest_login', 'Auth\LoginController@guest_login')->name('login.guest
 Route::get('/my_page', 'HomeController@my_page')->name('my_page');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/main', 'HomeController@main')->name('main');
-Route::post('/result', 'HomeController@result')->name('result');
+Route::post('/result', 'CarController@result')->name('result');
 Route::get('/post_car', 'CarController@post_car')->name('post_car');
-
+// Route::get('/post_car', 'CarController@post_car')->name('post_car');

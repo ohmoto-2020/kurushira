@@ -18,4 +18,9 @@ class Car extends Model
         }
         return $car_array;
     }
+
+    public static function getSelectCarsFromDb()
+    {
+        
+    }
 }

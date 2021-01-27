@@ -299,9 +299,10 @@ a {
 .section__card__maker__box {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  padding: 0.5rem 1rem;
+  padding-left: 1rem;
+  padding-bottom: 0.6rem;
   margin: 0 auto;
+  width: 200px;
   text-align: left;
   color: red;
 }
