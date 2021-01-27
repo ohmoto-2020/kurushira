@@ -47,9 +47,4 @@ class HomeController extends Controller
       return view('page.result');
     }
 
-    public function share()
-    {
-      return view('page.share');
-    }
-
 }

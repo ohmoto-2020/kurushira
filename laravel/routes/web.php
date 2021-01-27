@@ -20,9 +20,10 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/index', 'HomeController@index')->name('index');
-Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
+Route::get('guest_login', 'Auth\LoginController@guest_login')->name('login.guest_login');
 Route::get('/my_page', 'HomeController@my_page')->name('my_page');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/main', 'HomeController@main')->name('main');
-Route::get('/share', 'HomeController@share')->name('share');
 Route::post('/result', 'HomeController@result')->name('result');
+Route::get('/post_car', 'CarController@post_car')->name('post_car');
+

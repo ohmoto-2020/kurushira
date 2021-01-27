@@ -53,7 +53,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .header__left {
@@ -254,6 +254,91 @@ a {
 
 .main .card .button__group__start:hover {
   background-color: rgba(172, 166, 94, 0.7);
+  transition: 0.2s;
+}
+
+.section {
+  margin-top: 8rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.section__card {
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.section__card__header {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  background-color: #0ab8b7;
+  border-bottom: solid 1px #078080;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px 5px 0 0;
+}
+
+.section__card__title {
+  margin-top: 2rem;
+  color: red;
+  text-align: left;
+}
+
+.section__card__maker {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #0ab8b7;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.section__card__maker__box {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  text-align: left;
+  color: red;
+}
+
+.section__card__file {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.section__card__button {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section__card__button .send {
+  width: 120px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem;
+  margin: 2rem 0;
+  background-color: #0ab8b7;
+  line-height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.section__card__button .send a {
+  color: white;
+}
+
+.section__card__button .send:hover {
+  background-color: rgba(15, 202, 202, 0.7);
   transition: 0.2s;
 }
 

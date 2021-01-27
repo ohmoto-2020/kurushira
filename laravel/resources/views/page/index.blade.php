@@ -23,7 +23,7 @@
       <li><i class="fas fa-check-square"></i>ナンバープレートは消してから</li>
     </ul>
     <div class="button__group">
-      <a href="{{ route('share') }}" class="button__group__start">シェア</a>
+      <a href="{{ route('post_car') }}" class="button__group__start">シェア</a>
     </div>
   </div>
 </div>

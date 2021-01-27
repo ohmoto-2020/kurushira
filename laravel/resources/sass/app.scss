@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
+  box-shadow: $box-shadow;
   &__left {
     padding-left: 2rem;
     a {
@@ -89,8 +89,7 @@
       padding: 0.5rem 0;
       background-color: $main;
       border-bottom: solid 1px $header;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-      0 2px 10px 0 rgba(0,0,0,.12);
+      box-shadow: $box-shadow;
       border-radius: 5px 5px 0 0;
     }
     &__body {
@@ -129,8 +128,7 @@
           border: none;
           outline: none;
           cursor: pointer;
-          box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
-          0 2px 10px 0 rgba(0,0,0,.12);
+          box-shadow: $box-shadow;
           border-radius: 5px;
           a {
             color: $white;
@@ -200,6 +198,84 @@
             background-color: rgba(172, 166, 94, 0.7);
             transition: 0.2s;
           }
+        }
+      }
+    }
+  }
+}
+
+// -----------------------
+// post_car
+// -----------------------
+.section {
+  margin-top: 8rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  &__card {
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    &__header {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+      background-color: $main;
+      border-bottom: solid 1px $header;
+      box-shadow: $box-shadow;
+      border-radius: 5px 5px 0 0;
+    }
+    &__title {
+      margin-top: 2rem;
+      color: red;
+      text-align: left;
+    }
+    &__maker {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $main;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+      border-radius: 5px;
+      margin: 0 auto;
+      width: 95%;
+      &__box {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        padding: 0.5rem 1rem;
+        margin: 0 auto;
+        text-align: left;
+        color: red;
+      }
+    }
+    &__file {
+      color: red;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    &__button {
+      margin: 0 auto;
+      text-align: center;
+      .send {
+        width: 120px;
+        color: $white;
+        font-size: 1rem;
+        padding: 0.3rem;
+        margin: 2rem 0;
+        background-color: $main;
+        line-height: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: $box-shadow;
+        border-radius: 5px;
+        a {
+          color: $white;
+        }
+        &:hover {
+          background-color: rgba(rgb(15, 202, 202), 0.7);
+          transition: 0.2s;
         }
       }
     }
