@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+// use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
@@ -19,8 +21,9 @@ class Car extends Model
         return $car_array;
     }
 
-    public static function getSelectCarsFromDb()
+    public static function getSearchCarsFromDb(Request $request)
     {
-        
+        $match_car = Car::where('style',$request->style)->where('size',$request->size)->where('country',$request->country)->where('uses',$request->uses)->get();
+        return $match_car;
     }
 }

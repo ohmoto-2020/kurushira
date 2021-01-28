@@ -5,6 +5,7 @@
 <div class="container">
   <p class="note">個人差がありますので様々なパターンを試してみてください。</p>
   <form action="{{ route('result') }}" class="container__card" method="POST">
+  @csrf
     <div class="container__card__header">特徴を選んでください</div>
     <div class="container__card__body">
       <div class="container__card__body__box">

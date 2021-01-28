@@ -16,7 +16,7 @@
   </div>
 
   <div class="card">
-    <div class="card__title"><i class="fas fa-camera"></i>画像を投稿する</div>
+    <div class="card__title"><i class="fas fa-camera"></i>画像を提供する</div>
     <ul class="card__list">
       <li><i class="fas fa-check-square"></i>あなたの画像でアプリを充実</li>
       <li><i class="fas fa-check-square"></i>撮った画像を共有</li>
