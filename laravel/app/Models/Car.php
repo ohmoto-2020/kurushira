@@ -21,9 +21,10 @@ class Car extends Model
         return $car_array;
     }
 
-    public static function getSearchCarsFromDb(Request $request)
+        public static function getSearchCarsFromDb(Request $request)
     {
         $match_car = Car::where('style',$request->style)->where('size',$request->size)->where('country',$request->country)->where('uses',$request->uses)->get();
+        $match_car = ['style' => $request->style,'size' => $request->size,'country' => $request->country,'uses' => $request->uses,'match_car' => $match_car];
         return $match_car;
     }
 }

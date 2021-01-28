@@ -19,6 +19,7 @@ class CarController extends Controller
         // $match_car = Car::where('style',$request->style)->where('size',$request->size)->where('country',$request->country)->where('uses',$request->uses)->get();
 
         $match_car = Car::getSearchCarsFromDb($request);
+        // dd($match_car);
         return view('page.result',['match_car' => $match_car]);
     }
 
