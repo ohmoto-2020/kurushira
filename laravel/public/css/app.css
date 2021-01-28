@@ -343,3 +343,7 @@ a {
   transition: 0.2s;
 }
 
+.result__box {
+  margin-bottom: 1rem;
+}
+
