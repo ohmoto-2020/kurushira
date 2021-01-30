@@ -7,12 +7,23 @@
     @csrf
     <div class="form-group">
       <label for="name">名前</label>
+      @if(Auth::id() == 1)
+      <p style="color:red;">ゲストユーザーは、変更ができません</p>
+      <input type="text" name="name" class="form-control" value="{{ $user->name }}" readonly>
+      @else
       <input type="text" name="name" class="form-control" value="{{ $user->name }}">
+      @endif
     </div>
     <div class="form-group">
       <label for="email">email</label>
+      @if(Auth::id() == 1)
+      <input type="text" name="email" class="form-control" value="{{ $user->email }}" readonly>
+      @else
       <input type="text" name="email" class="form-control" value="{{ $user->email }}">
+      @endif
+      @if(Auth::id() != 1)
       <button type="submit" class="user-btn">変更</button>
+      @endif
     <div>
   </form>
 </div>
