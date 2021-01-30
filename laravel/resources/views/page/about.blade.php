@@ -3,7 +3,7 @@
 <body class="body">
 @section('content')
 <div class="container">
-  <h2>これはサイト詳細です</h2>
+  <p style="color:red;">これはサイト詳細です</p>
 </div>
 
 @endsection
