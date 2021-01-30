@@ -21,11 +21,14 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/index', 'HomeController@index')->name('index');
 Route::get('guest_login', 'Auth\LoginController@guest_login')->name('login.guest_login');
+
 Route::get('/my_page', 'HomeController@my_page')->name('my_page');
+# ユーザー情報編集
+Route::get('/edit', 'UserController@edit')->name('edit');
+Route::post('/edit', 'UserController@update')->name('update');
+
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/main', 'HomeController@main')->name('main');
 
 Route::post('/result', 'CarController@result')->name('result');
 Route::get('/post_car', 'CarController@post_car')->name('post_car');
-// Route::get('/post_car', 'CarController@post_car')->name('post_car');
-
