@@ -15,7 +15,7 @@ class CreateCarsImageTable extends Migration
     {
         Schema::create('cars_image', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('car_id')->unsigned();
+            $table->string('car_id');
             $table->text('image');
 
             //外部キー制約
