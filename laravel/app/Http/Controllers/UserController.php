@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    //userデータの取得
-    // public function index() {
-    //     return view('user.index', ['user' => Auth::user() ]);
-    // }
-
     //userデータの編集
     public function edit() {
         return view('auth.edit', ['user' => Auth::user() ]);
@@ -21,8 +16,8 @@ class UserController extends Controller
     public function update(Request $request) {
 
         $user_form = $request->all();
-        // ゲストユーザーは変更できずに即リダイレクト
         $user = Auth::user();
+        // ゲストユーザーは変更できずに即リダイレクト
         if($user->id == 1){
             return redirect('edit');
         }
@@ -31,7 +26,6 @@ class UserController extends Controller
         unset($user_form['_token']);
         //保存
         $user->fill($user_form)->save();
-        //リダイレクト
         return redirect('edit');
     }
 }
