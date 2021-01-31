@@ -31,9 +31,7 @@
 				</div>
 				<div class="container__card__body__button">
 					<button type="submit" class="send">ログイン</button>
-					<button class="send">
-						<a href="{{ route('login.guest_login') }}">ゲストログイン</a>
-					</button>
+					<a href="{{ route('login.guest_login') }}" class="send">ゲストログイン</a>
 				</div>
 			</form>
 		</div>
