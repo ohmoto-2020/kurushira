@@ -30,5 +30,8 @@ Route::post('/edit', 'UserController@update')->name('update');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/main', 'HomeController@main')->name('main');
 
-Route::post('/result', 'CarController@result')->name('result');
+
+Route::get('/result', 'CarController@result')->name('result');
+
+
 Route::get('/post_car', 'CarController@post_car')->name('post_car');
