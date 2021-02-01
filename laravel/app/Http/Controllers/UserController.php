@@ -19,7 +19,8 @@ class UserController extends Controller
         $user = Auth::user();
         // ゲストユーザーは変更できずに即リダイレクト
         if($user->id == 1){
-            \Session::flash('message', 'ゲストユーザーは変更することができません');
+            abort(401);
+            // \Session::flash('message', 'ゲストユーザーは変更することができません');
             return redirect('edit');
         }
 
