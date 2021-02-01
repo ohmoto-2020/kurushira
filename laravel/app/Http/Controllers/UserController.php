@@ -19,6 +19,7 @@ class UserController extends Controller
         $user = Auth::user();
         // ゲストユーザーは変更できずに即リダイレクト
         if($user->id == 1){
+            \Session::flash('message', 'ゲストユーザーは変更することができません');
             return redirect('edit');
         }
 
@@ -26,6 +27,7 @@ class UserController extends Controller
         unset($user_form['_token']);
         //保存
         $user->fill($user_form)->save();
+        \Session::flash('message', '変更されました');
         return redirect('edit');
     }
 }

@@ -3,6 +3,7 @@
 <body class="body">
 @section('content')
 <div class="container">
+  <p style="color: blue;">{{ session('message') }}</p>
   <form method="POST" action="{{ action('UserController@update') }}">
     @csrf
     <div class="form-group">
