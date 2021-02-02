@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    //テーブル名
-    // protected $table = 'cars';
     public static function getCarsFromDb()
     {
         $makers =
