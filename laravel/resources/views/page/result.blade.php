@@ -22,6 +22,7 @@
       <p>価格:{{ $car['price'] }}万円</p>
     </div>
     @endforeach
+    {{ $match_car["match_car"]->links() }}
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text="自分に合った車" >Tweet</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   @endif

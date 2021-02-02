@@ -23,7 +23,7 @@ class Car extends Model
 
         public static function getSearchCarsFromDb(Request $request)
     {
-        $match_car = Car::where('style',$request->style)->where('size',$request->size)->where('country',$request->country)->where('uses',$request->uses)->get();
+        $match_car = Car::where('style',$request->style)->where('size',$request->size)->where('country',$request->country)->where('uses',$request->uses)->paginate(2)->appends('style',$request->style)->appends('size',$request->size)->appends('country',$request->country)->appends('uses',$request->uses);
         $match_car = ['style' => $request->style,'size' => $request->size,'country' => $request->country,'uses' => $request->uses,'match_car' => $match_car];
         return $match_car;
     }
