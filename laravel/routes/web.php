@@ -32,6 +32,7 @@ Route::post('/edit', 'UserController@update')->name('update');
 Route::get('/about', 'HomeController@about')->name('about');
 // 車検索
 Route::get('/main', 'HomeController@main')->name('main');
+// Route::post('/main', 'CarController@store')->name('store');
 // 車検索結果
 Route::get('/result', 'CarController@result')->name('result');
 // 車の画像提供

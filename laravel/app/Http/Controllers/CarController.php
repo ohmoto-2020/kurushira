@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\History;
 use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
@@ -14,13 +15,22 @@ class CarController extends Controller
         return view('page.post_car',['car_array' => $car_array]);
     }
 
+    public function store(Request $request)
+    {
+        // $table = 'history';
+        // //ブログのデータを受け取る
+        // $inputs = $request->all();
+        // \DB::beginTransaction();
+        // //ブログを登録
+        // Car::create($inputs);
+        // \DB::commit();
+    }
+
     public function result(Request $request)
     {
-        // $match_car = Car::where('style',$request->style)->where('size',$request->size)->where('country',$request->country)->where('uses',$request->uses)->get();
-
+        History::addResultCarsFromDb($request);
         $match_car = Car::getSearchCarsFromDb($request);
         return view('page.result',['match_car' => $match_car]);
     }
-
 
 }
