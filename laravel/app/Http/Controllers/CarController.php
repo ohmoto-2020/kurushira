@@ -44,6 +44,7 @@ class CarController extends Controller
             'size' => $my_cars[0]['size'],
             'country' => $my_cars[0]['country'],
             'uses' => $my_cars[0]['uses'],
+            'updated_at' => $my_cars[0]['updated_at'],
             'match_car' => $match_car
         ];
         return view('auth.my_page',['match_car' => $match_car]);

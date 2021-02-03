@@ -7,6 +7,7 @@
 
   <a href="{{ route('edit') }}" style="color:red;">ユーザー登録内容の変更</a>
   <p style="color:red;">前回の履歴</p>
+  <p style="color:red;">{{ $match_car['updated_at'] }}</p>
   <ul style="color: red;">
     <li>style:{{ $match_car['style'] }}</li>
     <li>size:{{ $match_car['size'] }}</li>
