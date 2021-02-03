@@ -24,7 +24,7 @@ Route::get('/index', 'HomeController@index')->name('index');
 // ゲストログイン
 Route::get('guest_login', 'Auth\LoginController@guest_login')->name('login.guest_login');
 // マイページ
-Route::get('/my_page', 'HomeController@my_page')->name('my_page');
+Route::get('/my_page', 'CarController@history')->name('history');
 // ユーザー情報編集
 Route::get('/edit', 'UserController@edit')->name('edit');
 Route::post('/edit', 'UserController@update')->name('update');
@@ -32,7 +32,6 @@ Route::post('/edit', 'UserController@update')->name('update');
 Route::get('/about', 'HomeController@about')->name('about');
 // 車検索
 Route::get('/main', 'HomeController@main')->name('main');
-// Route::post('/main', 'CarController@store')->name('store');
 // 車検索結果
 Route::get('/result', 'CarController@result')->name('result');
 // 車の画像提供
