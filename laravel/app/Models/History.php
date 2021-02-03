@@ -27,18 +27,23 @@ class History extends Model
         $size = $request->size;
         $country = $request->country;
         $uses = $request->uses;
-        $history_add = History::updateOrCreate(
-        [
-            'user_id' => $user_id
-        ],
-        [
-            'user_id' => $user_id,
-            'style' => $style,
-            'size' => $size,
-            'country' => $country,
-            'uses' => $uses
-        ]);
+        if($user_id === null){
+            return false;
+        } else {
+            $history_add = History::updateOrCreate(
+            [
+                'user_id' => $user_id
+            ],
+            [
+                'user_id' => $user_id,
+                'style' => $style,
+                'size' => $size,
+                'country' => $country,
+                'uses' => $uses
+            ]);
 
-        return $history_add;
+            return $history_add;
+        }
+
     }
 }
