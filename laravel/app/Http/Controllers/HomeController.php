@@ -27,11 +27,6 @@ class HomeController extends Controller
       return view('page.index');
     }
 
-    public function my_page()
-    {
-      return view('auth.my_page');
-    }
-
     public function about()
     {
       return view('page.about');
