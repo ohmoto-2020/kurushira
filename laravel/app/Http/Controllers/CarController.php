@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     // 画像提供
     public function post_car()
     {
