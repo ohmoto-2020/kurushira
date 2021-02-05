@@ -15,7 +15,8 @@ class CreateCarsTable extends Migration
     {
         if(!Schema::hasTable('cars')){
             Schema::create('cars', function (Blueprint $table) {
-                $table->string('id')->unique();
+                // $table->string('id')->unique();
+                $table->bigIncrements('id');
                 $table->string('name');
                 $table->string('maker');
                 $table->string('price');
