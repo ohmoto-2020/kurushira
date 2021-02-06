@@ -52,21 +52,25 @@ class History extends Model
     {
         $user_id = Auth::id();
         $my_cars = History::where('user_id',$user_id)->get();
-        $match_car = Car::where('style',$my_cars[0]['style'])
-                            ->where('size',$my_cars[0]['size'])
-                            ->where('country',$my_cars[0]['country'])
-                            ->where('uses',$my_cars[0]['uses'])
-                            ->get();
-        $match_car =
-        [
-            'style' => $my_cars[0]['style'],
-            'size' => $my_cars[0]['size'],
-            'country' => $my_cars[0]['country'],
-            'uses' => $my_cars[0]['uses'],
-            'updated_at' => $my_cars[0]['updated_at'],
-            'match_car' => $match_car
-        ];
+        if($my_cars->isEmpty()){
+            return null;
+        } else {
+            $match_car = Car::where('style',$my_cars[0]['style'])
+                                ->where('size',$my_cars[0]['size'])
+                                ->where('country',$my_cars[0]['country'])
+                                ->where('uses',$my_cars[0]['uses'])
+                                ->get();
+            $match_car =
+            [
+                'style' => $my_cars[0]['style'],
+                'size' => $my_cars[0]['size'],
+                'country' => $my_cars[0]['country'],
+                'uses' => $my_cars[0]['uses'],
+                'updated_at' => $my_cars[0]['updated_at'],
+                'match_car' => $match_car
+            ];
 
-        return $match_car;
+            return $match_car;
+        }
     }
 }
