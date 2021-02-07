@@ -8,89 +8,89 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
+    // リレーション
+    public function car_images()
+    {
+        return $this->hasMany('App\Models\CarImage', "car_id", "id");
+    }
+    // 車種配列
     public static function getCarsFromDb()
     {
         $makers =
-        [
-            'トヨタ',
-            'レクサス',
-            '光岡自動車',
-            'ホンダ',
-            'マツダ',
-            'スバル',
-            'ダイハツ',
-            'スズキ',
-            '三菱',
-            'メルセデス・ベンツ',
-            'スマート',
-            'BMW',
-            'アウディ',
-            'フォルクスワーゲン',
-            'ミニ',
-            'ポルシェ',
-            'キャデラック',
-            'シボレー',
-            'ハマー',
-            'フォード',
-            'リンカーン',
-            'クライスラー',
-            'ダッジ',
-            'ジープ',
-            'テスラ',
-            'ロールス・ロイス',
-            'ベントレー',
-            'ランドローバー',
-            'アストンマーティン',
-            'ロータス',
-            'マクラーレン',
-            'ローバー',
-            'ケータハム',
-            'モーガン',
-            'ボルボ',
-            'プジョー',
-            'ルノー',
-            'シトロエン',
-            'DSオートモビル',
-            'ブガッティ',
-            'アルピーヌ',
-            'フィアット',
-            'アルファロメオ',
-            'フェラーリ',
-            'ランボルギーニ',
-            'マセラティ',
-            'アバルト',
-            'インフィニティ',
-            '米国トヨタ'
-        ];
+            [
+                'トヨタ',
+                'レクサス',
+                '光岡自動車',
+                'ホンダ',
+                'マツダ',
+                'スバル',
+                'ダイハツ',
+                'スズキ',
+                '三菱',
+                'メルセデス・ベンツ',
+                'スマート',
+                'BMW',
+                'アウディ',
+                'フォルクスワーゲン',
+                'ミニ',
+                'ポルシェ',
+                'キャデラック',
+                'シボレー',
+                'ハマー',
+                'フォード',
+                'リンカーン',
+                'クライスラー',
+                'ダッジ',
+                'ジープ',
+                'テスラ',
+                'ロールス・ロイス',
+                'ベントレー',
+                'ランドローバー',
+                'アストンマーティン',
+                'ロータス',
+                'マクラーレン',
+                'ローバー',
+                'ケータハム',
+                'モーガン',
+                'ボルボ',
+                'プジョー',
+                'ルノー',
+                'シトロエン',
+                'DSオートモビル',
+                'ブガッティ',
+                'アルピーヌ',
+                'フィアット',
+                'アルファロメオ',
+                'フェラーリ',
+                'ランボルギーニ',
+                'マセラティ',
+                'アバルト',
+                'インフィニティ',
+                '米国トヨタ'
+            ];
 
         $car_array = array();
-        foreach($makers as $maker){
-            $cars = Car::where('maker',$maker)
-                        ->get();
+        foreach ($makers as $maker) {
+            $cars = Car::where('maker', $maker)
+                ->get();
             $car_array[$maker] = $cars;
         }
         return $car_array;
     }
 
+    // 検索結果
     public static function getSearchCarsFromDb(Request $request)
     {
-        $match_car = Car::where('style',$request->style)
-                        ->where('size',$request->size)
-                        ->where('country',$request->country)
-                        ->where('uses',$request->uses)
-                        ->paginate(5)
-                        ->appends('style',$request->style)
-                        ->appends('size',$request->size)
-                        ->appends('country',$request->country)
-                        ->appends('uses',$request->uses);
-        $match_car =
-        [
-            'style' => $request->style,
-            'size' => $request->size,
-            'country' => $request->country,
-            'uses' => $request->uses,
-            'match_car' => $match_car
-        ];
-        return $match_car;
+        $match_cars = Car::where('style', $request->style)
+            ->where('size', $request->size)
+            ->where('country', $request->country)
+            ->where('uses', $request->uses)
+            ->paginate(5)
+            ->appends('style', $request->style)
+            ->appends('size', $request->size)
+            ->appends('country', $request->country)
+            ->appends('uses', $request->uses);
+
+        return $match_cars;
     }
 }
