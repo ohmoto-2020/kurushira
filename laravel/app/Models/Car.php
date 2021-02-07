@@ -21,6 +21,7 @@ class Car extends Model
                 'トヨタ',
                 'レクサス',
                 '光岡自動車',
+                '日産',
                 'ホンダ',
                 'マツダ',
                 'スバル',
@@ -85,7 +86,7 @@ class Car extends Model
             ->where('size', $request->size)
             ->where('country', $request->country)
             ->where('uses', $request->uses)
-            ->paginate(5)
+            ->paginate(6)
             ->appends('style', $request->style)
             ->appends('size', $request->size)
             ->appends('country', $request->country)
