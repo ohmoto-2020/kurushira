@@ -36,3 +36,4 @@ Route::get('/main', 'HomeController@main')->name('main');
 Route::get('/result', 'CarController@result')->name('result');
 // 車の画像提供
 Route::get('/post_car', 'CarController@post_car')->name('post_car');
+Route::post('/post_car', 'CarController@create')->name('create');
