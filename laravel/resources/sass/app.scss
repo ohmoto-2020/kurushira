@@ -290,3 +290,43 @@
     margin-bottom: 1rem;
   }
 }
+
+// -----------------------
+// offer
+// -----------------------
+.offer-container {
+  margin-top: 6rem;
+  &__card {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    &__header {
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+      background-color: $main;
+      border-bottom: solid 1px $header;
+      box-shadow: $box-shadow;
+      border-radius: 5px 5px 0 0;
+    }
+    &__body {
+      display: inline-block;
+      margin: 0 auto;
+      color: black;
+      padding: 2rem 0;
+      &__name {
+        font-size: 1.5rem;
+        text-align: left;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 1rem;
+      }
+      &__image {
+        width: 600px;
+        box-shadow: $box-shadow;
+        border-radius: 5px;
+      }
+    }
+  }
+}
