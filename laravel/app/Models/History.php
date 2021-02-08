@@ -53,7 +53,7 @@ class History extends Model
         $user_id = Auth::id();
         $my_cars = History::where('user_id',$user_id)->get();
         if($my_cars->isEmpty()){
-            return null;
+            return ;
         } else {
             $match_car = Car::where('style',$my_cars[0]['style'])
                                 ->where('size',$my_cars[0]['size'])
