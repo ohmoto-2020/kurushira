@@ -18,7 +18,6 @@ class CarController extends Controller
         $this->middleware('auth');
     }
 
-
     // 検索結果
     public function result(Request $request)
     {
@@ -43,8 +42,21 @@ class CarController extends Controller
     // 前回の履歴
     public function history()
     {
-        $match_car = History::getHistoryHistoriesFromDb();
-        return view('auth.my_page', ['match_car' => $match_car]);
+        $match_cars = History::getHistoryHistoriesFromDb();
+        if(empty($match_cars[0]->toArray())){
+            return view('auth.my_page', ['match_cars' => $match_cars[0]]);
+        } else {
+            $history_value =
+            [
+                'style' => $match_cars[0][0]['style'],
+                'size' => $match_cars[0][0]['size'],
+                'country' => $match_cars[0][0]['country'],
+                'uses' => $match_cars[0][0]['uses'],
+                'updated_at' => $match_cars[1][0]['updated_at'],
+            ];
+            $match_cars = $match_cars[0];
+            return view('auth.my_page', ['match_cars' => $match_cars,'history_value' => $history_value]);
+        }
     }
 
     // 画像提供

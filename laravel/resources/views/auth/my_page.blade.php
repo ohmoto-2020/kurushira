@@ -7,27 +7,23 @@
 
   <a href="{{ route('edit') }}" style="color:blue;">ユーザー登録内容の変更</a>
   <p style="color:red;">前回の履歴</p>
-  @if(!is_null($match_car))
-    <p style="color:red;">{{ $match_car['updated_at'] }}</p>
+  @if(!empty($match_cars->toArray()))
+    <p style="color:red;">{{ $history_value['updated_at']->format('Y-m-d') }}</p>
     <ul style="color: red;">
-      <li>style:{{ $match_car['style'] }}</li>
-      <li>size:{{ $match_car['size'] }}</li>
-      <li>country:{{ $match_car['country'] }}</li>
-      <li>uses:{{ $match_car['uses'] }}</li>
+      <li>style:{{ $history_value['style'] }}</li>
+      <li>size:{{ $history_value['size'] }}</li>
+      <li>country:{{ $history_value['country'] }}</li>
+      <li>uses:{{ $history_value['uses'] }}</li>
     </ul>
-    @if($match_car["match_car"]->isEmpty())
+
+    @if(empty($match_cars))
       <p class="not-find" style="color: red;">該当する車は見つかりませんでした</p>
     @else
-      @foreach($match_car["match_car"] as $car)
-      <div class="result__box" style="color: red;">
-        <p>車種名:{{ $car['name'] }}</p>
-        <p>メーカー:{{ $car['maker'] }}</p>
-        <p>価格:{{ $car['price'] }}万円</p>
-      </div>
-      @endforeach
+      @include('match')
     @endif
   @else
     <p style="color:red;">履歴はありません</p>
   @endif
 </div>
+<script src="{{ asset('/js/swiper.js') }}"></script>
 @endsection
