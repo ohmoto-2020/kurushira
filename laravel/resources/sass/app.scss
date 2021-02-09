@@ -12,6 +12,25 @@
   background-color: $white;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  .active {
+    color: $white;
+    background-color: $main;
+  }
+  .disabled {
+    color: rgb(234,237,241);
+  }
+  li {
+    border: 1px solid rgb(234,237,241);
+    padding: 0.5rem 1rem;
+    a {
+      color: $main;
+    }
+  }
+}
+
 // -----------------------
 // header
 // -----------------------
@@ -285,9 +304,81 @@
 // -----------------------
 // result
 // -----------------------
-.result {
-  &__box {
-    margin-bottom: 1rem;
+.selected-value {
+  margin-top: 4rem;
+  &__card {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    &__header {
+      color: $white;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      background-color: $main;
+      border-bottom: solid 1px $header;
+      box-shadow: $box-shadow;
+      border-radius: 5px 5px 0 0;
+    }
+    &__body {
+      padding: 1rem 0;
+      color: black;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+.not-find {
+  color: red;
+}
+.match-container {
+  &__car {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &__box {
+      margin: 1rem 2rem 0 2rem;
+      .swiper-custom-parent {
+        .swiper-container{
+          .swiper-wrapper {
+            width: 360px;
+            .swiper-slide {
+              width: 360px;
+              height: 270px;
+              box-shadow: $box-shadow;
+            }
+          }
+          .swiper-pagination {
+            bottom: 40;
+          }
+          .swiper-button-prev {
+            top: 40%;
+            color: $main;
+          }
+          .swiper-button-next {
+            top: 40%;
+            color: $main;
+          }
+        }
+      }
+      .no-image {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 360px;
+        height: 270px;
+        background-color: rgb(198,198,198);
+        .far {
+          color: $white;
+          margin: auto;
+          p {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
   }
 }
 

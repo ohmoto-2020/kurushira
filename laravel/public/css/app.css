@@ -46,6 +46,29 @@ a {
   background-color: white;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .active {
+  color: white;
+  background-color: #0ab8b7;
+}
+
+.pagination .disabled {
+  color: #eaedf1;
+}
+
+.pagination li {
+  border: 1px solid #eaedf1;
+  padding: 0.5rem 1rem;
+}
+
+.pagination li a {
+  color: #0ab8b7;
+}
+
 .header {
   width: 100%;
   padding: 0.7rem 0;
@@ -339,8 +362,90 @@ a {
   transition: 0.2s;
 }
 
-.result__box {
-  margin-bottom: 1rem;
+.selected-value {
+  margin-top: 4rem;
+}
+
+.selected-value__card {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.selected-value__card__header {
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  background-color: #0ab8b7;
+  border-bottom: solid 1px #078080;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px 5px 0 0;
+}
+
+.selected-value__card__body {
+  padding: 1rem 0;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.not-find {
+  color: red;
+}
+
+.match-container__car {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.match-container__car__box {
+  margin: 1rem 2rem 0 2rem;
+}
+
+.match-container__car__box .swiper-custom-parent .swiper-container .swiper-wrapper {
+  width: 360px;
+}
+
+.match-container__car__box .swiper-custom-parent .swiper-container .swiper-wrapper .swiper-slide {
+  width: 360px;
+  height: 270px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.match-container__car__box .swiper-custom-parent .swiper-container .swiper-pagination {
+  bottom: 40;
+}
+
+.match-container__car__box .swiper-custom-parent .swiper-container .swiper-button-prev {
+  top: 40%;
+  color: #0ab8b7;
+}
+
+.match-container__car__box .swiper-custom-parent .swiper-container .swiper-button-next {
+  top: 40%;
+  color: #0ab8b7;
+}
+
+.match-container__car__box .no-image {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 360px;
+  height: 270px;
+  background-color: #c6c6c6;
+}
+
+.match-container__car__box .no-image .far {
+  color: white;
+  margin: auto;
+}
+
+.match-container__car__box .no-image .far p {
+  font-size: 2rem;
 }
 
 .offer-container {

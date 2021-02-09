@@ -10,6 +10,11 @@
     <script src="https://kit.fontawesome.com/2353a33daa.js" crossorigin="anonymous"></script>
     <!-- ファビコン -->
     <link rel="icon" href="{{ asset('/favicon.ico') }}">
+    <!-- swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- タイトル -->
     <title>@yield('title')</title>
   </head>
