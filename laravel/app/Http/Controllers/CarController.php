@@ -69,6 +69,11 @@ class CarController extends Controller
     // 画像保存
     public function create(Request $request)
     {
+        $user = Auth::user();
+        if($user->id == 1){ // ゲストユーザーはリダイレクト
+            abort(401);
+            return redirect('post_car');
+        }
         $post = new CarImage;
         $form = $request->all();
         if (array_key_exists('maker', $form)) { //メーカーを選択しているか

@@ -4,6 +4,9 @@
 @section('content')
 <div class="section">
   <p style="color: blue;">{{ session('message') }}</p>
+  @if(Auth::id() == 1)
+    <p style="color:red;">ゲストユーザーは画像提供ができません</p>
+  @endif
   <form action="{{ action('CarController@post_car') }}" class="section__card" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="section__card__header">画像を提供する</div>
@@ -13,16 +16,27 @@
       <div class="section__card__maker__box">
         <div class="section__card__maker__box__form">
           <label>
+          @if(Auth::id() == 1)
+            <input type="radio" name="maker" value="{{ $maker }}" disabled>
+            {{ $maker }}
+          @else
             <input type="radio" name="maker" value="{{ $maker }}">
             {{ $maker }}
+          @endif
           </label>
         </div>
         <select name="{{ $maker }}">
           <option value="">---------</option>
           @foreach($cars as $car)
-          <option value="{{ $car['name'] }}">
-            {{ $car['name'] }}
-          </option>
+          @if(Auth::id() == 1)
+            <option value="{{ $car['name'] }}" disabled>
+              {{ $car['name'] }}
+            </option>
+          @else
+            <option value="{{ $car['name'] }}">
+              {{ $car['name'] }}
+            </option>
+          @endif
           @endforeach
         </select>
       </div>
@@ -30,10 +44,18 @@
     </div>
     <div class="section__card__file">
       <label for="file">画像を選択してください</label>
-      <input type="file" name="file">
+      @if(Auth::id() == 1)
+        <input type="file" name="file" disabled>
+      @else
+        <input type="file" name="file">
+      @endif
     </div>
     <div class="section__card__button">
-      <input type="submit" value="アップロード" class="send">
+      @if(Auth::id() == 1)
+        <input type="submit" value="アップロード" class="send" disabled>
+      @else
+        <input type="submit" value="アップロード" class="send">
+      @endif
     </div>
   </form>
 </div>
