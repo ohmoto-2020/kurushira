@@ -23,7 +23,7 @@
       @include('layouts.header')
     </header>
 
-    <main>
+    <main style="margin-top:2rem;">
       @yield('content')
     </main>
 

@@ -15,6 +15,7 @@
 .pagination {
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
   .active {
     color: $white;
     background-color: $main;
@@ -228,7 +229,7 @@
   padding-bottom: 3rem;
   text-align: center;
   &__card {
-    width: 90%;
+    width: 60%;
     margin: 0 auto;
     box-shadow: $box-shadow;
     border-radius: 5px;
@@ -242,36 +243,33 @@
       border-radius: 5px 5px 0 0;
     }
     &__title {
-      margin-top: 2rem;
+      font-size: 1.4rem;
       color: red;
-      text-align: left;
+      margin-top: 2rem;
+      text-align: center;
+      span {
+        padding-left: 2rem;
+      }
     }
     &__maker {
       display: flex;
       flex-wrap: wrap;
-      background-color: $main;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-      border-radius: 5px;
       margin: 0 auto;
-      width: 95%;
+      width: 85%;
       &__box {
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
-        padding-bottom: 0.6rem;
-        margin: 0 auto;
-        width: 200px;
+        margin: 0 auto 1rem;
+        width: 170px;
         text-align: left;
-        color: red;
+        color: $main;
         &__form {
         }
       }
     }
     &__file {
       color: red;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
     }
     &__button {
       margin: 0 auto;
@@ -302,10 +300,17 @@
 }
 
 // -----------------------
-// result
+// result/my_page
 // -----------------------
+.history-title {
+  display: flex;
+  justify-content: center;
+  p {
+    font-size: 1.4rem;
+    margin: 0 2rem;
+  }
+}
 .selected-value {
-  margin-top: 4rem;
   &__card {
     text-align: center;
     width: 50%;
@@ -333,13 +338,22 @@
   color: red;
 }
 .match-container {
+  padding-bottom: 3rem;
   &__car {
-    margin-top: 5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     &__box {
-      margin: 1rem 2rem 0 2rem;
+      text-align: left;
+      margin: 4rem 2rem 0 2rem;
+      &__name {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      &__title {
+        display: flex;
+        justify-content: space-between;
+      }
       .swiper-custom-parent {
         .swiper-container{
           .swiper-wrapper {
@@ -355,11 +369,11 @@
           }
           .swiper-button-prev {
             top: 40%;
-            color: $main;
+            color: rgba(35,35,35,0.3);
           }
           .swiper-button-next {
             top: 40%;
-            color: $main;
+            color: rgba(35,35,35,0.3);
           }
         }
       }
