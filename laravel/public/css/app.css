@@ -82,6 +82,7 @@ a {
 
 .header__left {
   padding-left: 2rem;
+  letter-spacing: 0.7rem;
 }
 
 .header__left a {
@@ -154,7 +155,7 @@ a {
 
 .container__card__body {
   color: black;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .container__card__body__box {
@@ -182,14 +183,14 @@ a {
 .container__card__body__button {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
 }
 
 .container__card__body__button .send {
   width: 120px;
   color: white;
   font-size: 1rem;
-  padding: 0.3rem;
+  font-weight: bold;
   margin: 0 2rem;
   background-color: #0ab8b7;
   line-height: 50px;
@@ -362,6 +363,7 @@ a {
 }
 
 .history-title {
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
 }

@@ -45,6 +45,7 @@
   box-shadow: $box-shadow;
   &__left {
     padding-left: 2rem;
+    letter-spacing: 0.7rem;
     a {
       color: $white;
     }
@@ -111,7 +112,7 @@
     }
     &__body {
       color: black;
-      padding: 3rem 0;
+      padding: 2rem 0;
       &__box {
         margin: 0 auto 1rem;
         width: 350px;
@@ -133,12 +134,12 @@
       &__button {
         display: flex;
         justify-content: center;
-        margin-top: 1rem;
+        margin-top: 2.5rem;
         .send {
           width: 120px;
           color: $white;
           font-size: 1rem;
-          padding: 0.3rem;
+          font-weight: bold;
           margin: 0 2rem;
           background-color: $main;
           line-height: 50px;
@@ -303,6 +304,7 @@
 // result/my_page
 // -----------------------
 .history-title {
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   p {
