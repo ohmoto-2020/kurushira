@@ -5,7 +5,7 @@
 <div class="container">
   <p style="color:red;">{{ Auth::user()->name }}さん</p>
 
-  <a href="{{ route('edit') }}" style="color:blue;">ユーザー登録内容の変更</a>
+  <a href="{{ route('edit') }}" style="color:blue;">ユーザー情報の変更</a>
   @if(!empty($match_cars->toArray()))
     <div class="history-title">
       <p style="color:red;">前回の履歴</p>
