@@ -10,7 +10,7 @@
   <form action="{{ action('CarController@post_car') }}" class="section__card" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="section__card__header">画像を提供する</div>
-    <p class="section__card__title">車種を選択してください</p>
+    <p class="section__card__title"><i class="fas fa-car"></i>STEP1<span>車種を選択してください<span></p>
     <div class="section__card__maker">
       @foreach($car_array as $maker=>$cars)
       <div class="section__card__maker__box">
@@ -42,12 +42,12 @@
       </div>
       @endforeach
     </div>
+    <p class="section__card__title"><i class="fas fa-camera">STEP2<span>画像を選択してください<span></p>
     <div class="section__card__file">
-      <label for="file">画像を選択してください</label>
       @if(Auth::id() == 1)
         <input type="file" name="file" disabled>
       @else
-        <input type="file" name="file">
+        <input type="file" name="file" accept="image/*">
       @endif
     </div>
     <div class="section__card__button">
