@@ -55,7 +55,7 @@ class CarController extends Controller
                 'updated_at' => $match_cars[1][0]['updated_at'],
             ];
             $match_cars = $match_cars[0];
-            return view('auth.my_page', ['match_cars' => $match_cars,'history_value' => $history_value]);
+            return view('auth.my_page', ['match_cars' => $match_cars,'selected_value' => $history_value]);
         }
     }
 
