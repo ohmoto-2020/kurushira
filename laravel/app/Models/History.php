@@ -21,6 +21,7 @@ class History extends Model
 
     protected $primaryKey = 'user_id';
 
+    // historiesテーブルに検索結果を保存
     public static function addResultCarsFromDb(Request $request)
     {
         $user_id = Auth::id();
@@ -48,6 +49,7 @@ class History extends Model
 
     }
 
+    // 検索履歴を取得
     public static function getHistoryHistoriesFromDb()
     {
         $user_id = Auth::id();
@@ -55,13 +57,13 @@ class History extends Model
         if($my_cars->isEmpty()){
             return;
         } else {
-            $match_car = Car::where('style',$my_cars[0]['style'])
+            $match_cars = Car::where('style',$my_cars[0]['style'])
                             ->where('size',$my_cars[0]['size'])
                             ->where('country',$my_cars[0]['country'])
                             ->where('uses',$my_cars[0]['uses'])
                             ->paginate(6);
 
-            return [$match_car, $my_cars];
+            return [$match_cars, $my_cars];
         }
     }
 }

@@ -43,8 +43,8 @@ class CarController extends Controller
     public function history()
     {
         $match_cars = History::getHistoryHistoriesFromDb();
-        if(empty($match_cars[0]->toArray())){
-            return view('auth.my_page', ['match_cars' => $match_cars[0]]);
+        if(empty($match_cars)){
+            return view('auth.my_page', ['match_cars' => $match_cars]);
         } else {
             $history_value =
             [
@@ -76,26 +76,25 @@ class CarController extends Controller
         }
         $post = new CarImage;
         $form = $request->all();
-        if (array_key_exists('maker', $form)) { //メーカーを選択しているか
-            $array = array_keys($form); //メーカーキーの取得
+        if (array_key_exists('maker', $form)) { // メーカーを選択しているか
+            $array = array_keys($form); // メーカーキーの取得
             $search = array_search($form['maker'], $array);
             $match = $form[$array[$search]];
             $cars = Car::where('name', $match)->get();
 
-            if (!is_null($match)) { //車種を選択しているか
+            if (!is_null($match)) { // 車種を選択しているか
                 // 二重送信防止
                 // $request->session()->regenerateToken();
-                //s3アップロード開始
+                // s3アップロード開始
                 $image = $request->file('file');
 
-                if (file_exists($image) == true) { //画像を選択しているか
+                if (file_exists($image) == true) { // 画像を選択しているか
                     // バケットの`myprefix`フォルダへアップロード
                     $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
                     // アップロードした画像のフルパスを取得
                     $post->image = Storage::disk('s3')->url($path);
                     $post->car_id = $cars[0]['id'];
                     $post->save();
-                    // $car = CarImage::select()->join('cars', 'cars.id', '=', 'car_images.car_id')->orderBy('updated_at', 'desc')->take(1)->get();
                     $car = CarImage::orderBy('updated_at', 'desc')->take(1)->get();
                     return view('page.offer', ['cars' => $car,'car_name' => $cars]);
                 } else {

@@ -6,7 +6,7 @@
   <p style="color:red;">{{ Auth::user()->name }}さん</p>
 
   <a href="{{ route('edit') }}" style="color:blue;">ユーザー情報の変更</a>
-  @if(!empty($match_cars->toArray()))
+  @if(!empty($match_cars))
     <div class="history-title">
       <p style="color:red;">前回の履歴</p>
       <p style="color:red;">{{ $selected_value['updated_at']->format('Y-m-d') }}</p>
