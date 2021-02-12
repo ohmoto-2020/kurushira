@@ -59,11 +59,19 @@ class CarController extends Controller
         }
     }
 
-    // 提供画像一覧
+    // 個々の提供画像一覧
     public function my_image() {
         $user_id = Auth::id();
         $my_images = CarImage::where('user_id',$user_id)->get();
         return view('auth.my_image',['my_images' => $my_images]);
+    }
+
+    // 提供画像削除
+    public function delete(Request $request) {
+        $image = $request->image;
+        $delete = CarImage::where('image',$image)->delete();
+        \Session::flash('message', '削除しました');
+        return redirect('my_image');
     }
 
     // 提供画像選択画面
