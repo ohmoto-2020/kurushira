@@ -11,7 +11,7 @@ class Car extends Model
     // リレーション
     public function car_images()
     {
-        return $this->hasMany('App\Models\CarImage', "car_id", "id");
+        return $this->hasMany('App\Models\CarImage');
     }
     // 車種配列
     public static function getCarsFromDb()
