@@ -471,6 +471,7 @@ a {
 
 .offer-container {
   margin-top: 6rem;
+  padding-bottom: 3rem;
 }
 
 .offer-container__card {
@@ -482,7 +483,7 @@ a {
 }
 
 .offer-container__card__header {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding: 0.5rem 0;
   background-color: #0ab8b7;
   border-bottom: solid 1px #078080;
@@ -509,5 +510,29 @@ a {
   width: 600px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+}
+
+.offer-container__card__body form {
+  margin-top: 2rem;
+}
+
+.offer-container__card__body form .send {
+  width: 120px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 2rem;
+  background-color: #0ab8b7;
+  line-height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.offer-container__card__body form .send:hover {
+  background-color: rgba(15, 202, 202, 0.7);
+  transition: 0.2s;
 }
 

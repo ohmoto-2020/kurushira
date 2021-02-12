@@ -69,7 +69,8 @@ class CarController extends Controller
     // 提供画像削除
     public function delete(Request $request) {
         $image = $request->image;
-        $delete = CarImage::where('image',$image)->delete();
+        // $s3_delete = Storage::disk('s3')->delete($image);
+        $db_delete = CarImage::where('image',$image)->delete();
         \Session::flash('message', '削除しました');
         return redirect('my_image');
     }
@@ -99,7 +100,7 @@ class CarController extends Controller
 
             if (!is_null($match)) { // 車種を選択しているか
                 // 二重送信防止
-                // $request->session()->regenerateToken();
+                $request->session()->regenerateToken();
                 // s3アップロード開始
                 $image = $request->file('file');
 
