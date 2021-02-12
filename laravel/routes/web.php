@@ -26,6 +26,8 @@ Route::get('guest_login', 'Auth\LoginController@guest_login')->name('login.guest
 // マイページ
 Route::get('/my_page', 'CarController@history')->name('history');
 // ユーザー情報編集
+Route::get('/my_image', 'CarController@my_image')->name('my_image');
+// ユーザー情報編集
 Route::get('/edit', 'UserController@edit')->name('edit');
 Route::post('/edit', 'UserController@update')->name('update');
 // サイト詳細

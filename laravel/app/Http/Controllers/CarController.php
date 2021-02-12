@@ -59,7 +59,14 @@ class CarController extends Controller
         }
     }
 
-    // 画像提供
+    // 提供画像一覧
+    public function my_image() {
+        $user_id = Auth::id();
+        $my_images = CarImage::where('user_id',$user_id)->get();
+        return view('auth.my_image',['my_images' => $my_images]);
+    }
+
+    // 提供画像選択画面
     public function post_car()
     {
         $car_array = Car::getCarsFromDb();
@@ -94,6 +101,7 @@ class CarController extends Controller
                     // アップロードした画像のフルパスを取得
                     $post->image = Storage::disk('s3')->url($path);
                     $post->car_id = $cars[0]['id'];
+                    $post->user_id = Auth::id();
                     $post->save();
                     $car = CarImage::orderBy('updated_at', 'desc')->take(1)->get();
                     return view('page.offer', ['cars' => $car,'car_name' => $cars]);
