@@ -8,7 +8,8 @@ RUN apt-get update && \
   docker-php-ext-install intl pdo_mysql zip bcmath && \
   curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh && \
   bash nodesource_setup.sh && \
-  apt -y install nodejs
+  apt -y install nodejs && \
+  apt-get -y install vim
 
 #composerのインストール
 COPY --from=composer:1.10 /usr/bin/composer /usr/bin/composer
