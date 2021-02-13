@@ -108,7 +108,6 @@ class CarController extends Controller
                 if (file_exists($image) == true) { // 画像を選択しているか
                     // バケットのmyprefixフォルダへアップロード
                     $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
-                    // アップロードした画像のフルパスを取得
                     $post->image = $path;
                     $post->car_id = $cars[0]['id'];
                     $post->user_id = Auth::id();

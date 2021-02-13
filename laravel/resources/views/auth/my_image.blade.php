@@ -13,10 +13,8 @@
         <img  class="offer-container__card__body__image" src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$my_image['image']}}"  alt="{{ $my_image->car->name }}">
         <form action="{{ action('CarController@delete') }}" method="POST">
         @csrf
-          <!-- <div class="offer-container__card__body__button"> -->
             <input type="hidden" name="image" value="{{ $my_images[0]->image }}">
             <input type="submit" value="削除"  class="send">
-          <!-- </div> -->
         </form>
       </div>
     </div>
