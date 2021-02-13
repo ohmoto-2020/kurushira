@@ -16,7 +16,7 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             @foreach($car->car_images as $image)
-            <img src="{{$image['image']}}" class="swiper-slide">
+            <img src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$image['image']}}" class="swiper-slide">
             @endforeach
           </div>
           <!-- ↓ページネーション -->

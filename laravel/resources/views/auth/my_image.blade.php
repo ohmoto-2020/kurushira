@@ -10,7 +10,7 @@
     <div class="offer-container__card">
       <div class="offer-container__card__header">{{$my_image->car->name}}</div>
       <div class="offer-container__card__body">
-        <img  class="offer-container__card__body__image" src="{{$my_image['image']}}"  alt="{{ $my_image->car->name }}">
+        <img  class="offer-container__card__body__image" src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$my_image['image']}}"  alt="{{ $my_image->car->name }}">
         <form action="{{ action('CarController@delete') }}" method="POST">
         @csrf
           <!-- <div class="offer-container__card__body__button"> -->

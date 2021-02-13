@@ -10,7 +10,7 @@
         <p>メーカー：{{ $car_name[0]['maker'] }}</p>
         <p>&emsp;車&ensp;種&thinsp;：{{ $car_name[0]['name'] }}</p>
       </div>
-      <img  class="offer-container__card__body__image" src="{{ $cars[0]['image'] }}"  alt="{{ $car_name[0]['name'] }}">
+      <img  class="offer-container__card__body__image" src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{ $cars[0]['image'] }}"  alt="{{ $car_name[0]['name'] }}">
     </div>
   </div>
 </div>
