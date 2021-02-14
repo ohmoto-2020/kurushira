@@ -13,7 +13,7 @@
 						<label for="name" class="text-md-right">{{ __('ユーザー名') }}
 							<small class="text-danger">（必須）</small>
 						</label>
-						<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="※15文字以内">
+						<input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="※15文字以内">
 						@error('name')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
 					<label for="email" class="text-md-right">{{ __('メールアドレス') }}
 						<small class="text-danger">（必須）</small>
 					</label>
-					<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="例）example@co.jp">
+					<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="例）example@co.jp">
 
 					@error('email')
 						<span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
 					<label for="password" class="text-md-right">{{ __('パスワード') }}
 						<small class="text-danger">（必須）</small>
 					</label>
-					<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="※8文字以上">
+					<input id="password" type="password" class="form-control" name="password" required autocomplete="new-password" placeholder="※8文字以上">
 
 					@error('password')
 						<span class="invalid-feedback" role="alert">
