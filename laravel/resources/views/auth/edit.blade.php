@@ -7,29 +7,39 @@
   <div class="container__card">
     <div class="container__card__header">ユーザ情報編集</div>
     <div class="container__card__body">
-      <form method="POST" action="{{ action('UserController@update') }}">
+      <form method="POST" action="{{ action('UserController@editValidates') }}">
         @csrf
         <div class="form-group">
           @if(Auth::id() == 1)
-          <p style="color:red;">ゲストユーザーは、変更ができません</p>
-          <div class="container__card__body__box">
-            <label for="name">名前</label>
-            <input type="text" name="name" class="form-control" value="{{ $user->name }}" disabled>
-          </div>
+            <p style="color:red;">ゲストユーザーは、変更ができません</p>
+            <div class="container__card__body__box">
+              <label for="name">名前</label>
+              <input type="text" name="name" class="form-control" value="{{ $user->name }}" required autocomplete="name" disabled>
+            </div>
           @else
-          <div class="container__card__body__box">
-            <label for="name">名前</label>
-            <input type="text" name="name" class="form-control" value="{{ $user->name }}">
-          </div>
+            <div class="container__card__body__box">
+              <label for="name">名前</label>
+              <input type="text" name="name" class="form-control" value="{{ $user->name }}" required autocomplete="name">
+              @error('name')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
           @endif
         </div>
         <div class="form-group">
           <div class="container__card__body__box">
             <label for="email">メールアドレス</label>
             @if(Auth::id() == 1)
-            <input type="text" name="email" class="form-control" value="{{ $user->email }}" disabled>
+              <input type="email" name="email" class="form-control" value="{{ $user->email }}" required autocomplete="email" disabled>
             @else
-            <input type="text" name="email" class="form-control" value="{{ $user->email }}">
+              <input type="email" name="email" class="form-control" value="{{ $user->email }}" required autocomplete="email">
+              @error('email')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
             @endif
           </div>
           <div class="container__card__body__button">

@@ -4,9 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function editValidates(Request $request)
+    {
+        // userデータの編集バリデーション
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:15'],
+            'email' => ['required', 'string', 'email', 'max:255']
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('edit')
+            ->withErrors($validator)
+            ->withInput();
+        } else {
+            return $this->update($request);
+        }
+    }
+
     //userデータの編集
     public function edit() {
         return view('auth.edit', ['user' => Auth::user() ]);
@@ -20,7 +38,6 @@ class UserController extends Controller
         // ゲストユーザーは変更できずに即リダイレクト
         if($user->id == 1){
             abort(401);
-            // \Session::flash('message', 'ゲストユーザーは変更することができません');
             return redirect('edit');
         }
 

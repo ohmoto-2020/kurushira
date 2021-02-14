@@ -25,12 +25,12 @@ Route::get('/index', 'HomeController@index')->name('index');
 Route::get('guest_login', 'Auth\LoginController@guest_login')->name('login.guest_login');
 // マイページ
 Route::get('/my_page', 'CarController@history')->name('history');
-// ユーザー情報編集
+// ユーザーが提供した画像
 Route::get('/my_image', 'CarController@my_image')->name('my_image');
 Route::post('/my_image', 'CarController@delete')->name('delete');
 // ユーザー情報編集
 Route::get('/edit', 'UserController@edit')->name('edit');
-Route::post('/edit', 'UserController@update')->name('update');
+Route::post('/edit', 'UserController@editValidates')->name('editValidates');
 // サイト詳細
 Route::get('/about', 'HomeController@about')->name('about');
 // 車検索

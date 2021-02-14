@@ -402,6 +402,11 @@ a {
   color: red;
 }
 
+.twitter {
+  text-align: right;
+  margin-right: 4rem;
+}
+
 .match-container {
   padding-bottom: 3rem;
 }
