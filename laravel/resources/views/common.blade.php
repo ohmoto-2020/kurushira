@@ -14,11 +14,7 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/2353a33daa.js" crossorigin="anonymous"></script>
     <!-- ファビコン -->
-    @if(app('env')=='local')
-      <link rel="icon" href="{{ asset('/favicon.ico') }}">
-    @elseif(app('env')=='production')
-      <link rel="icon" href="{{ secure_asset('/favicon.ico') }}">
-    @endif
+    <link rel="icon" href="{{ asset('/favicon.ico') }}">
     <!-- swiper.js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
