@@ -13,6 +13,9 @@
       <img  class="offer-container__card__body__image" src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{ $cars[0]['image'] }}"  alt="{{ $car_name[0]['name'] }}">
     </div>
   </div>
+  <div class="button">
+    <a href="{{ route('post_car') }}" class="send">ほかの画像も提供する</a>
+  </div>
 </div>
 
 @endsection

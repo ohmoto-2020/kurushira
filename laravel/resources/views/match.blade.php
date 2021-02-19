@@ -1,9 +1,9 @@
-<div class="match-container" style="color:red;">
+<div class="match-container">
   <div class="match-container__car">
     @foreach($match_cars as $car)
     <div class="match-container__car__box">
-      <p class="match-container__car__box__name">車種名:{{ $car['name'] }}</p>
-      <div class="match-container__car__box__title">
+      <div class="match-container__car__box__value">
+        <p class="match-container__car__box__value__name">車種名:{{ $car['name'] }}</p>
         <p>メーカー:{{ $car['maker'] }}</p>
         <p>価格:{{ $car['price'] }}万円</p>
       </div>

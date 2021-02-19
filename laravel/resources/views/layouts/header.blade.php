@@ -15,5 +15,5 @@
   @endif
 @endauth
 @endif
-  <a href="{{ route('about') }}" class="header__right__list">サイト詳細</a>
+  <a href="{{ route('about') }}" class="header__right__list">利用規約</a>
 </div>

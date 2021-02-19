@@ -111,7 +111,7 @@
       border-radius: 5px 5px 0 0;
     }
     &__body {
-      color: black;
+      color: $black;
       padding: 2rem 0;
       &__box {
         margin: 0 auto 1rem;
@@ -207,7 +207,7 @@
           margin: 0 auto;
           font-size: 1.4rem;
           font-weight: bold;
-          color: #000;
+          color: $black;
           line-height: 60px;
           background-color: rgb(252, 227, 0);
           border-radius: 150px;
@@ -226,74 +226,78 @@
 // post_car
 // -----------------------
 .section {
-  margin-top: 8rem;
+  color: $black;
+  margin-top: 3rem;
   padding-bottom: 3rem;
   text-align: center;
-  &__card {
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    span {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
+  &__form {
     width: 60%;
     margin: 0 auto;
-    box-shadow: $box-shadow;
-    border-radius: 5px;
-    &__header {
-      text-align: center;
-      font-size: 1.5rem;
-      padding: 0.5rem 0;
-      background-color: $main;
-      border-bottom: solid 1px $header;
-      box-shadow: $box-shadow;
-      border-radius: 5px 5px 0 0;
+    &__arrow {
+      font-size: 2rem;
+      margin: 2rem 0;
     }
-    &__title {
-      font-size: 1.4rem;
-      color: red;
-      margin-top: 2rem;
-      text-align: center;
-      span {
-        padding-left: 2rem;
+    &__card {
+      border: solid 1px $black;
+      &__header {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        margin: 0 2rem;
+        border-bottom: solid 1px $black;
       }
-    }
-    &__maker {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 auto;
-      width: 85%;
-      &__box {
+      &__maker {
         display: flex;
-        flex-direction: column;
-        padding-left: 1rem;
-        margin: 0 auto 1rem;
-        width: 170px;
-        text-align: left;
-        color: $main;
-        &__form {
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: 85%;
+        &__box {
+          display: flex;
+          flex-direction: column;
+          padding-left: 1rem;
+          margin: 1.3rem auto;
+          width: 170px;
+          text-align: left;
+          select {
+            height: 25px;
+          }
         }
       }
-    }
-    &__file {
-      color: red;
-    }
-    &__button {
-      margin: 0 auto;
-      text-align: center;
-      .send {
-        width: 120px;
-        color: $white;
-        font-size: 1rem;
-        padding: 0.3rem;
-        margin: 2rem 0;
-        background-color: $main;
-        line-height: 50px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        box-shadow: $box-shadow;
-        border-radius: 5px;
-        a {
-          color: $white;
-        }
-        &:hover {
-          background-color: rgba(rgb(15, 202, 202), 0.7);
-          transition: 0.2s;
+      &__file {
+        margin: 3rem;
+      }
+      &__button {
+        margin: 0 auto;
+        text-align: center;
+        .send {
+          width: 150px;
+          color: $black;
+          font-size: 1rem;
+          padding: 0.3rem;
+          margin: 2rem 0;
+          background-color: rgb(200, 200, 200);
+          letter-spacing: 0.2rem;
+          line-height: 50px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          box-shadow: $box-shadow;
+          a {
+            color: $white;
+          }
+          &:hover {
+            background-color: rgba(rgb(200, 200, 200), 0.7);
+            transition: 0.2s;
+          }
         }
       }
     }
@@ -303,7 +307,33 @@
 // -----------------------
 // result/my_page
 // -----------------------
+.user {
+  margin-bottom: 5rem;
+  &__link {
+    &__send {
+      display: inline-block;
+      width: 220px;
+      height: 50px;
+      color: $white;
+      margin: 0 4rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: $main;
+      line-height: 50px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: $box-shadow;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgba(rgb(15, 202, 202), 0.7);
+        transition: 0.2s;
+      }
+    }
+  }
+}
 .history-title {
+  color: $black;
   margin-top: 3rem;
   display: flex;
   justify-content: center;
@@ -314,7 +344,7 @@
 }
 .selected-value {
   &__card {
-    text-align: center;
+    text-align: left;
     width: 50%;
     margin: 0 auto;
     box-shadow: $box-shadow;
@@ -322,15 +352,16 @@
     &__header {
       color: $white;
       font-size: 1rem;
-      padding: 0.5rem 0;
+      padding: 0.5rem 2.5rem;
       background-color: $main;
+      font-weight: bold;
       border-bottom: solid 1px $header;
       box-shadow: $box-shadow;
       border-radius: 5px 5px 0 0;
     }
     &__body {
-      padding: 1rem 0;
-      color: black;
+      padding: 2rem 0;
+      color: $gray;
       display: flex;
       justify-content: space-around;
     }
@@ -340,8 +371,9 @@
   color: red;
 }
 .twitter {
-  text-align: right;
-  margin-right: 4rem;
+  color: $gray;
+  text-align: center;
+  padding-bottom: 3rem;
 }
 .match-container {
   padding-bottom: 3rem;
@@ -352,13 +384,12 @@
     &__box {
       text-align: left;
       margin: 4rem 2rem 0 2rem;
-      &__name {
-        font-size: 1.2rem;
-        text-align: center;
-      }
-      &__title {
-        display: flex;
-        justify-content: space-between;
+      &__value {
+        color: $black;
+        &__name {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
       }
       .swiper-custom-parent {
         .swiper-container{
@@ -403,6 +434,77 @@
 }
 
 // -----------------------
+// my_image
+// -----------------------
+.title {
+  color: $black;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.my-image {
+  text-align: center;
+  padding-bottom: 3rem;
+  .not-find {
+    margin-top: 2rem;
+    color: red;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    &__card {
+      text-align: center;
+      width: 30%;
+      margin: 2rem auto 0;
+      box-shadow: $box-shadow;
+      border-radius: 5px;
+      &__header {
+        font-size: 1.7rem;
+        padding: 0.5rem 0;
+        background-color: $main;
+        border-bottom: solid 1px $header;
+        box-shadow: $box-shadow;
+        border-radius: 5px 5px 0 0;
+      }
+      &__body {
+        display: inline-block;
+        margin: 0 auto;
+        color: $black;
+        padding: 2rem 0;
+        &__image {
+          width: 360px;
+          height: 270px;
+          box-shadow: $box-shadow;
+          border-radius: 5px;
+        }
+        form {
+          margin-top: 2rem;
+          .send {
+            width: 120px;
+            color: $white;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 2rem;
+            background-color: $main;
+            line-height: 50px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            box-shadow: $box-shadow;
+            border-radius: 5px;
+            &:hover {
+              background-color: rgba(rgb(15, 202, 202), 0.7);
+              transition: 0.2s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// -----------------------
 // offer
 // -----------------------
 .offer-container {
@@ -425,7 +527,7 @@
     &__body {
       display: inline-block;
       margin: 0 auto;
-      color: black;
+      color: $black;
       padding: 2rem 0;
       &__name {
         font-size: 1.5rem;
@@ -439,26 +541,57 @@
         box-shadow: $box-shadow;
         border-radius: 5px;
       }
-      form {
-        margin-top: 2rem;
-        .send {
-          width: 120px;
-          color: $white;
-          font-size: 1rem;
-          font-weight: bold;
-          margin: 0 2rem;
-          background-color: $main;
-          line-height: 50px;
-          border: none;
-          outline: none;
-          cursor: pointer;
-          box-shadow: $box-shadow;
-          border-radius: 5px;
-          &:hover {
-            background-color: rgba(rgb(15, 202, 202), 0.7);
-            transition: 0.2s;
-          }
-        }
+    }
+  }
+  .button {
+    margin-top: 3rem;
+    text-align: center;
+    .send {
+      display: inline-block;
+      width: 200px;
+      color: $white;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0 2rem;
+      background-color: $main;
+      line-height: 50px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: $box-shadow;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgba(rgb(15, 202, 202), 0.7);
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+// -----------------------
+// about
+// -----------------------
+.about-container {
+  background-color: rgb(245, 245, 245);
+  color: $black;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 5px;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+  &__box {
+    margin: 0 1rem 2rem 1rem;
+    h3 {
+      padding-bottom: 0.5rem;
+    }
+    ol {
+      margin: 1rem 0;
+      padding-left: 4rem;
+      li {
+        list-style: decimal;
       }
     }
   }

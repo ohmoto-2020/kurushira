@@ -1,6 +1,6 @@
 <div class="selected-value">
   <div class="selected-value__card">
-    <p class="selected-value__card__header">選択したやつ</p>
+    <p class="selected-value__card__header">検索条件</p>
     <ul class="selected-value__card__body">
       <li>スタイル:{{ $selected_value['style'] }}</li>
       <li>サイズ:{{ $selected_value['size'] }}</li>
