@@ -15,14 +15,14 @@
       <p>{{ $selected_value['updated_at']->format('Y-m-d') }}</p>
     </div>
     @include('selected_value')
-    @if(empty($match_cars))
+    @if(is_null($match_cars[0]))
       <p>前回の履歴</p>
-      <p class="not-find" style="color: red;">該当する車は見つかりませんでした</p>
+      <p class="not-find">該当する車は見つかりませんでした</p>
     @else
       @include('match')
     @endif
   @else
-    <p>履歴はありません</p>
+    <p class="not-find">履歴はありません</p>
   @endif
 </div>
 <script src="{{ asset('/js/swiper.js') }}"></script>

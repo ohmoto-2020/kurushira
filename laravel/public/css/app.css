@@ -436,7 +436,10 @@ a {
 }
 
 .not-find {
-  color: red;
+  margin-top: 2rem;
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
 }
 
 .twitter {
@@ -525,7 +528,7 @@ a {
 
 .my-image .not-find {
   margin-top: 2rem;
-  color: red;
+  color: #646464;
 }
 
 .my-image__container {

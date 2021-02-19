@@ -3,7 +3,7 @@
 <body class="body">
 @section('content')
 <div class="section">
-  <p style="color: blue;">{{ session('message') }}</p>
+  <p style="color: red;">{{ session('message') }}</p>
   @if(Auth::id() == 1)
     <p style="color:red;">ゲストユーザーは画像提供ができません</p>
   @endif
