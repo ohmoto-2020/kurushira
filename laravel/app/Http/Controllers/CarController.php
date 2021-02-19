@@ -48,10 +48,10 @@ class CarController extends Controller
         } else {
             $history_value =
             [
-                'style' => $match_cars[0][0]['style'],
-                'size' => $match_cars[0][0]['size'],
-                'country' => $match_cars[0][0]['country'],
-                'uses' => $match_cars[0][0]['uses'],
+                'style' => $match_cars[1][0]['style'],
+                'size' => $match_cars[1][0]['size'],
+                'country' => $match_cars[1][0]['country'],
+                'uses' => $match_cars[1][0]['uses'],
                 'updated_at' => $match_cars[1][0]['updated_at'],
             ];
             $match_cars = $match_cars[0];
