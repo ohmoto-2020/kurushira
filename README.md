@@ -71,4 +71,4 @@ Dockerコンテナをデプロイしたかったのですが、ECSの学習コ�
   ⚪︎ テスト
   ⚪︎ Github Actionsで自動デプロイ
   ⚪︎ Dockerファイルの書き方
-  ⚪︎ ECSへデプロイ
+  ⚪︎ ECSへデプロイ  
