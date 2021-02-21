@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // 本番環境でページネーション2ページ目以降を表示する
+        if(app('env')=='production'){
+            \URL::forceScheme('https');
+            $this->app['request']->server->set('HTTPS','on');
+        }
     }
 }
