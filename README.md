@@ -22,11 +22,11 @@ URL:https://pf-kurushira.com
 
 
 ### 車検索画面&履歴の表示画面
-![車検索](https://user-images.githubusercontent.com/71020018/108617579-f6b70400-745a-11eb-8651-a6a8d328e8f2.gif)
+![車検索](https://user-images.githubusercontent.com/71020018/108617891-02a3c580-745d-11eb-84a3-3cb9178e4285.gif)
 
 
 ### 画像提供画面&提供画像一覧画面
-![画像提供](https://user-images.githubusercontent.com/71020018/108617613-3e3d9000-745b-11eb-877d-9722bf5d3ea2.gif)
+![車提供](https://user-images.githubusercontent.com/71020018/108617885-ef90f580-745c-11eb-8c92-b1370d9cefe8.gif)
 
 
 ## 使用技術
