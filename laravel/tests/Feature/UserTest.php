@@ -41,4 +41,19 @@ class UserTest extends TestCase
         $this->assertAuthenticated();
     }
 
+    //ログアウト
+    public function testLogout()
+    {
+        // ダミーログイン
+        $response = $this->dummyLogin();
+        // 認証を確認
+        $this->assertAuthenticated();
+        $response = $this->post('/logout');
+        // ホーム画面にリダイレクト
+        $response->assertStatus(302)
+                 ->assertRedirect('/'); // リダイレクト先を確認
+        // 認証されていないことを確認
+        $this->assertGuest();
+    }
+
 }
