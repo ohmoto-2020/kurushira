@@ -3,20 +3,42 @@
 namespace Tests\Feature;
 
 use App\User;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
+// use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    use DatabaseTransactions;
+    use DatabaseMigrations;
 
-    //ログイン画面を表示
+    // ログイン画面を表示
     public function testLoginView()
     {
         $response = $this->get('/login');
         $response->assertStatus(200);
         $this->assertGuest();
     }
+
+    // ダミーログイン
+    private function dummyLogin()
+    {
+        $user = factory(User::class, 'default')->create();
+        return $this->actingAs($user)
+                    ->withSession(['user_id' => $user->id])
+                    ->get(route('index')); // homeにリダイレクト
+    }
+
+    // ログイン処理を実行
+    public function testLogin()
+    {
+        $this->assertGuest();
+        // ダミーログイン
+        $response = $this->dummyLogin();
+        $response->assertStatus(200);
+        // 認証を確認
+        $this->assertAuthenticated();
+    }
+
 }
