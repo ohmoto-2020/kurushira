@@ -48,7 +48,7 @@ jobs:
           git fetch --all &&
           git reset --hard origin/main &&
           git pull origin main &&
-          cp -r kurushira/laravel/ laravel/
+          cp -r laravel/ ../laravel/
           '
 
           # SSHのポートを閉じる
