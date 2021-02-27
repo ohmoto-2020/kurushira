@@ -49,6 +49,6 @@ jobs:
           git reset --hard origin/master &&
           git pull origin master
           '
-          
+        
           # SSHのポートを閉じる
           aws --profile eyemovic-dev ec2 revoke-security-group-ingress --group-id ${SECURITY_GROUP} --protocol tcp --port 22 --cidr "$IP_ADDRESS"/32
