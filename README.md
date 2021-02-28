@@ -42,6 +42,8 @@ URL:https://pf-kurushira.com
   ⚪︎ Laravel 6.20.11
 
 ### インフラ
+  ⚪︎ Github Actions 自動デプロイ
+
   ⚪︎ Docker 20.10.2 / docker-compose 1.27.4
 
   ⚪︎ nginx 1.18
@@ -58,7 +60,7 @@ Dockerコンテナをデプロイしたかったのですが、ECSの学習コ�
 今回はEC2にデプロイしました。
 
 ## インフラ構成図
-<img width="557" alt="スクリーンショット 2021-02-20 17 39 03" src="https://user-images.githubusercontent.com/71020018/108591841-1e9c5e00-73ae-11eb-9a86-474898a49eba.png">
+<img width="844" alt="スクリーンショット 2021-02-28 20 11 32" src="https://user-images.githubusercontent.com/71020018/109416373-2fc61a00-7a01-11eb-8782-eabaf5aaf0ea.png">
 
 ## 機能一覧
 |機能  |概要  |
@@ -101,8 +103,6 @@ Dockerコンテナをデプロイしたかったのですが、ECSの学習コ�
   ⚪︎ Laravelのミドルウェアを理解
 
   ⚪︎ テスト
-
-  ⚪︎ Github Actionsで自動デプロイ
 
   ⚪︎ Dockerファイルの書き方
 
