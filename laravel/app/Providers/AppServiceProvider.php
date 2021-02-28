@@ -25,9 +25,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(UrlGenerator $url)
     {
         // 本番環境でページネーション2ページ目以降を表示する
-        // if(app('env')=='production'){
+        if(app('env')=='production'){
             $url->forceScheme('https');
             $this->app['request']->server->set('HTTPS','on');
-        // }
+        }
     }
 }
