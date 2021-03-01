@@ -48,3 +48,11 @@ html, body {
 a {
   text-decoration: none;
 }
+
+// メディアクエリ
+@mixin sp-layout($width: 540px) {
+  @media screen and
+  (max-width: $width) {
+      @content;
+  }
+}
