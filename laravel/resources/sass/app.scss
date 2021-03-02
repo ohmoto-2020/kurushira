@@ -98,6 +98,10 @@
 }
 @include sp-layout() {
   .header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
     overflow: hidden;
     background-color: $header;
     &__left {
@@ -270,15 +274,20 @@
 // index
 // -----------------------
 .main {
-  display: flex;
   margin-top: 5rem;
   color: rgb(34, 34, 34);
+  @include pc-layout() {
+    display: flex;
+  }
   .card {
     width: 320px;
     background-color: rgba(255,255,255,.6);
     margin-left: 2.5rem;
     box-shadow: $box-shadow;
     border-radius: 5px;
+    @include sp-layout() {
+      margin: 2rem auto;
+    }
     &__title {
       font-size: 1.5rem;
       font-weight: bold;
@@ -301,6 +310,10 @@
       &__group {
         margin: 2rem auto;
         width: 180px;
+        @include sp-layout() {
+          margin: 0.5rem auto;
+          padding-bottom: 1rem;
+        }
         &__induction {
           text-align: center;
         }

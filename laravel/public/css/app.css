@@ -144,6 +144,10 @@ a {
 
 @media screen and (max-width: 540px) {
   .header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
     overflow: hidden;
     background-color: #078080;
   }
@@ -349,9 +353,14 @@ a {
 }
 
 .main {
-  display: flex;
   margin-top: 5rem;
   color: #222222;
+}
+
+@media screen and (min-width: 541px) {
+  .main {
+    display: flex;
+  }
 }
 
 .main .card {
@@ -360,6 +369,12 @@ a {
   margin-left: 2.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .main .card {
+    margin: 2rem auto;
+  }
 }
 
 .main .card__title {
@@ -387,6 +402,13 @@ a {
 .main .card .button__group {
   margin: 2rem auto;
   width: 180px;
+}
+
+@media screen and (max-width: 540px) {
+  .main .card .button__group {
+    margin: 0.5rem auto;
+    padding-bottom: 1rem;
+  }
 }
 
 .main .card .button__group__induction {
