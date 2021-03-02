@@ -43,6 +43,9 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: $box-shadow;
+  @include sp-layout() {
+    overflow: hidden;
+  }
   &__left {
     padding-left: 2rem;
     letter-spacing: 0.7rem;
@@ -580,6 +583,9 @@
   width: 60%;
   margin: 0 auto;
   border-radius: 5px;
+  @include sp-layout() {
+    width: 90%;
+  }
   h2 {
     text-align: center;
     font-size: 2rem;
@@ -593,6 +599,9 @@
     ol {
       margin: 1rem 0;
       padding-left: 4rem;
+      @include sp-layout() {
+        padding-left: 2rem;
+      }
       li {
         list-style: decimal;
       }
