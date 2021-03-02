@@ -200,6 +200,9 @@
 .container {
   margin-top: 3rem;
   text-align: center;
+  @include sp-layout() {
+    overflow: hidden;
+  }
   .note {
     color: red;
     font-size: 1.2rem;
@@ -211,6 +214,9 @@
     margin: 0 auto;
     box-shadow: $box-shadow;
     border-radius: 5px;
+    @include sp-layout() {
+      width: 90%;
+    }
     &__header {
       font-size: 1.5rem;
       padding: 0.5rem 0;
@@ -228,6 +234,9 @@
         text-align: left;
         display: flex;
         flex-direction: column;
+        @include sp-layout() {
+          width: 90%;
+        }
         .invalid-feedback {
           color: red;
         }
@@ -249,7 +258,7 @@
           color: $white;
           font-size: 1rem;
           font-weight: bold;
-          margin: 0 2rem;
+          margin: 0 0.5rem;
           background-color: $main;
           line-height: 50px;
           border: none;
