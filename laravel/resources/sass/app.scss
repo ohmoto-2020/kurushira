@@ -6,6 +6,10 @@
   background-blend-mode: lighten;
   background-repeat: no-repeat;
   background-position: center;
+  @include sp-layout() {
+    background-image: url("../image/sp_bg.jpg");
+    background-position: unset;
+  }
 }
 
 .body {
@@ -35,55 +39,153 @@
 // -----------------------
 // header
 // -----------------------
-.header {
-  width: 100%;
-  padding: 0.7rem 0;
-  background-color: $header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: $box-shadow;
-  @include sp-layout() {
-    overflow: hidden;
-  }
-  &__left {
-    padding-left: 2rem;
-    letter-spacing: 0.7rem;
-    a {
-      color: $white;
-    }
-  }
-  &__right {
-    padding-right: 1rem;
+@include pc-layout() {
+  .header {
+    width: 100%;
+    padding: 0.7rem 0;
+    background-color: $header;
     display: flex;
-    flex-direction: row;
-    &__list {
-      color: $white;
-      font-size: 1.3rem;
-      font-weight: bold;
-      padding: 1rem;
-      margin: 0 1rem;
-      &:hover {
-        color: $main;
-        transition: 0.5s;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: $box-shadow;
+    &__hamburger {
+      display: none;
+    }
+    &__left {
+      padding-left: 2rem;
+      letter-spacing: 0.7rem;
+      a {
+        color: $white;
       }
     }
-    .logout {
-      &__button {
+    &__right {
+      padding-right: 1rem;
+      display: flex;
+      flex-direction: row;
+      &__list {
         color: $white;
         font-size: 1.3rem;
         font-weight: bold;
         padding: 1rem;
         margin: 0 1rem;
-        border: none;
-        outline: none;
-        background-color:transparent;
-        cursor: pointer;
         &:hover {
           color: $main;
           transition: 0.5s;
         }
       }
+      .logout {
+        &__button {
+          color: $white;
+          font-size: 1.3rem;
+          font-weight: bold;
+          padding: 1rem;
+          margin: 0 1rem;
+          border: none;
+          outline: none;
+          background-color:transparent;
+          cursor: pointer;
+          &:hover {
+            color: $main;
+            transition: 0.5s;
+          }
+        }
+      }
+      .close {
+        display: none;
+      }
+    }
+  }
+}
+@include sp-layout() {
+  .header {
+    overflow: hidden;
+    background-color: $header;
+    &__left {
+      padding: 1rem 0 1rem 1rem;
+      letter-spacing: 0.7rem;
+      a {
+        color: $white;
+      }
+    }
+    &__right {
+      padding-right: 1rem;
+      &__list {
+        color: $gray;
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 2rem 0;
+        margin: 0 1rem;
+        &:hover {
+          color: $main;
+          transition: 0.5s;
+        }
+      }
+      .logout {
+        &__button {
+          color: $gray;
+          font-size: 1.3rem;
+          font-weight: bold;
+          padding: 1rem;
+          margin: 0 1rem;
+          border: none;
+          outline: none;
+          background-color:transparent;
+          cursor: pointer;
+          &:hover {
+            color: $main;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+    &__hamburger {
+      border: none;
+      position: fixed;
+      width: 30px;
+      height: 17px;
+      right: 20px;
+      top: 15px;
+      cursor: pointer;
+      background-color: rgb(7, 128, 128);
+      span {
+        top: 15px;
+        @include three-line;
+        &::before {
+          top: 7px;
+          @include three-line;
+        }
+        &::after {
+          top: 14px;
+          @include three-line;
+        }
+      }
+    }
+    .hide {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      top: 0px;
+      right: -200px;
+    }
+    .show {
+      text-align: center;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      top: 0px;
+      right: 0px;
+      width: 200px;
+      height: 100%;
+      transition: all 0.4s ease-out;
+      background-color: rgba(255, 255, 255,0.9);
+      box-shadow: 0 -2px 14px rgba(0, 0, 0, 0.3);
+    }
+    .close {
+      color: red;
+      font-size: 2rem;
+      padding: 1rem;
+      margin: 0 1rem;
     }
   }
 }
@@ -584,7 +686,7 @@
   margin: 0 auto;
   border-radius: 5px;
   @include sp-layout() {
-    width: 90%;
+    width: 100%;
   }
   h2 {
     text-align: center;

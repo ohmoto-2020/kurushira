@@ -42,6 +42,13 @@ a {
   background-position: center;
 }
 
+@media screen and (max-width: 540px) {
+  .home-body {
+    background-image: url(/images/sp_bg.jpg?5374306ac21619487aa436d889e4c31c);
+    background-position: unset;
+  }
+}
+
 .body {
   background-color: white;
 }
@@ -70,65 +77,190 @@ a {
   color: #0ab8b7;
 }
 
-.header {
-  width: 100%;
-  padding: 0.7rem 0;
-  background-color: #078080;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+@media screen and (min-width: 541px) {
+  .header {
+    width: 100%;
+    padding: 0.7rem 0;
+    background-color: #078080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .header__hamburger {
+    display: none;
+  }
+
+  .header__left {
+    padding-left: 2rem;
+    letter-spacing: 0.7rem;
+  }
+
+  .header__left a {
+    color: white;
+  }
+
+  .header__right {
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header__right__list {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+
+  .header__right__list:hover {
+    color: #0ab8b7;
+    transition: 0.5s;
+  }
+
+  .header__right .logout__button {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 0 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .header__right .logout__button:hover {
+    color: #0ab8b7;
+    transition: 0.5s;
+  }
+
+  .header__right .close {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 540px) {
   .header {
     overflow: hidden;
+    background-color: #078080;
   }
-}
 
-.header__left {
-  padding-left: 2rem;
-  letter-spacing: 0.7rem;
-}
+  .header__left {
+    padding: 1rem 0 1rem 1rem;
+    letter-spacing: 0.7rem;
+  }
 
-.header__left a {
-  color: white;
-}
+  .header__left a {
+    color: white;
+  }
 
-.header__right {
-  padding-right: 1rem;
-  display: flex;
-  flex-direction: row;
-}
+  .header__right {
+    padding-right: 1rem;
+  }
 
-.header__right__list {
-  color: white;
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 1rem;
-  margin: 0 1rem;
-}
+  .header__right__list {
+    color: #646464;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2rem 0;
+    margin: 0 1rem;
+  }
 
-.header__right__list:hover {
-  color: #0ab8b7;
-  transition: 0.5s;
-}
+  .header__right__list:hover {
+    color: #0ab8b7;
+    transition: 0.5s;
+  }
 
-.header__right .logout__button {
-  color: white;
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 1rem;
-  margin: 0 1rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-}
+  .header__right .logout__button {
+    color: #646464;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 0 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 
-.header__right .logout__button:hover {
-  color: #0ab8b7;
-  transition: 0.5s;
+  .header__right .logout__button:hover {
+    color: #0ab8b7;
+    transition: 0.5s;
+  }
+
+  .header__hamburger {
+    border: none;
+    position: fixed;
+    width: 30px;
+    height: 17px;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    background-color: #078080;
+  }
+
+  .header__hamburger span {
+    top: 15px;
+    content: "";
+    right: 0;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+  }
+
+  .header__hamburger span::before {
+    top: 7px;
+    content: "";
+    right: 0;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+  }
+
+  .header__hamburger span::after {
+    top: 14px;
+    content: "";
+    right: 0;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+  }
+
+  .header .hide {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+    right: -200px;
+  }
+
+  .header .show {
+    text-align: center;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    top: 0px;
+    right: 0px;
+    width: 200px;
+    height: 100%;
+    transition: all 0.4s ease-out;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 -2px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  .header .close {
+    color: red;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 0 1rem;
+  }
 }
 
 .container {
@@ -676,7 +808,7 @@ a {
 
 @media screen and (max-width: 540px) {
   .about-container {
-    width: 90%;
+    width: 100%;
   }
 }
 

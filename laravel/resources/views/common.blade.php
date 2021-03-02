@@ -30,5 +30,15 @@
     <main style="margin-top:6rem;">
       @yield('content')
     </main>
+    <!-- ハンバーガーのクラス変更 -->
+    <script>
+      function toggle(){
+        if(document.getElementById('hum').className === "header__right show") {
+            document.getElementById('hum').className = "header__right hide";
+        } else {
+            document.getElementById('hum').className = "header__right show";
+        }
+      }
+    </script>
   </body>
 </html>

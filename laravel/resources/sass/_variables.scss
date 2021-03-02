@@ -50,9 +50,25 @@ a {
 }
 
 // メディアクエリ
+@mixin pc-layout($width: 541px) {
+  @media screen and
+  (min-width: $width) {
+    @content;
+  }
+}
 @mixin sp-layout($width: 540px) {
   @media screen and
   (max-width: $width) {
       @content;
   }
+}
+
+// ハンバーガーメニューの三本線
+@mixin three-line {
+  content: "";
+  right: 0;
+  width: 30px;
+  height: 3px;
+  background-color: $white;
+  position: absolute;
 }
