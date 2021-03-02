@@ -23,14 +23,12 @@
     <!-- タイトル -->
     <title>@yield('title')</title>
   </head>
-
+  <body class="@yield('body')">
     <header class="header">
       @include('layouts.header')
     </header>
-
     <main style="margin-top:6rem;">
       @yield('content')
     </main>
-
   </body>
 </html>

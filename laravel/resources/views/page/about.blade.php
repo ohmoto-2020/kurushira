@@ -1,10 +1,9 @@
 @extends('common')
 @section('title','サイト詳細 | クルシラ')
-<body class="body">
+@section('body','body')
 @section('content')
 <div class="about-container">
   <h2>利用規約</h2>
-  <p></p>
   <div class="about-container__box">
     <h3>第1条（適用）</h3>
     <ol type="1">

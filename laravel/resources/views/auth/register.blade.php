@@ -1,6 +1,6 @@
 @extends('common')
 @section('title','ユーザー登録 | クルシラ')
-<body class="body">
+@section('body','body')
 @section('content')
 <div class="container">
 	<div class="container__card">

@@ -1,6 +1,6 @@
 @extends('common')
 @section('title','画像投稿 | クルシラ')
-<body class="body">
+@section('body','body')
 @section('content')
 <div class="section">
   <p style="color: red;">{{ session('message') }}</p>

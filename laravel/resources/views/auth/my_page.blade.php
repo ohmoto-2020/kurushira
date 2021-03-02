@@ -1,6 +1,6 @@
 @extends('common')
 @section('title','マイページ | クルシラ')
-<body class="body">
+@section('body','body')
 @section('content')
 <div class="container">
   <div class="user">

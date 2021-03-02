@@ -1,6 +1,6 @@
 @extends('common')
 @section('title','特徴選択 | クルシラ')
-<body class="body">
+@section('body','body')
 @section('content')
 <div class="container">
   <p class="note">個人差がありますので様々なパターンを試してみてください。</p>

@@ -1,6 +1,6 @@
 @extends('common')
 @section('title','ホーム | クルシラ')
-<body class="home-body">
+@section('body','home-body')
 @section('content')
 <div class="main">
   <div class="card">
