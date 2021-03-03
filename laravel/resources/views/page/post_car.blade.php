@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="section__form__card__button">
-      <input type="submit" value="アップロード" class="send">
+      <button type="submit" class="send" value="アップロード">アップロード</button>
     </div>
   </form>
 </div>
