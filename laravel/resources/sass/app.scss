@@ -637,6 +637,9 @@
       margin: 2rem auto 0;
       box-shadow: $box-shadow;
       border-radius: 5px;
+      @include sp-layout() {
+        width: 80%;
+      }
       &__header {
         font-size: 1.7rem;
         padding: 0.5rem 0;
@@ -655,6 +658,10 @@
           height: 270px;
           box-shadow: $box-shadow;
           border-radius: 5px;
+          @include sp-layout() {
+            width: 300px;
+            height: 210px;
+          }
         }
         form {
           margin-top: 2rem;

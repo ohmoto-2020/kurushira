@@ -814,6 +814,12 @@ a {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 540px) {
+  .my-image__container__card {
+    width: 80%;
+  }
+}
+
 .my-image__container__card__header {
   font-size: 1.7rem;
   padding: 0.5rem 0;
@@ -835,6 +841,13 @@ a {
   height: 270px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .my-image__container__card__body__image {
+    width: 300px;
+    height: 210px;
+  }
 }
 
 .my-image__container__card__body form {

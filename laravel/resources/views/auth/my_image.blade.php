@@ -15,7 +15,7 @@
           <form action="{{ action('CarController@delete') }}" method="POST">
             @csrf
             <input type="hidden" name="image" value="{{ $my_image->image }}">
-            <input type="submit" value="削除"  class="send">
+            <button type="submit" class="send" value="削除">削除</button>
           </form>
         </div>
       </div>
