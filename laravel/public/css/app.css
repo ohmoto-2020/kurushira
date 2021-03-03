@@ -288,6 +288,18 @@ a {
   margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 540px) {
+  .container .note {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 541px) {
+  .container .note .br {
+    display: none;
+  }
+}
+
 .container__card {
   text-align: center;
   width: 40%;

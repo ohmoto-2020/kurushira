@@ -3,7 +3,7 @@
 @section('body','body')
 @section('content')
 <div class="container">
-  <p class="note">個人差がありますので様々なパターンを試してみてください。</p>
+  <p class="note">個人差がありますので<br class="br">様々なパターンを試してみてください。</p>
   <form action="{{ route('result') }}" class="container__card" method="get">
     <div class="container__card__header">特徴を選んでください</div>
     <div class="container__card__body">

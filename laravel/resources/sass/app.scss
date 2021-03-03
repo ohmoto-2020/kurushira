@@ -210,6 +210,14 @@
     color: red;
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    @include sp-layout() {
+      font-size: 1rem;
+    }
+    .br {
+      @include pc-layout() {
+        display: none;
+      }
+    }
   }
   &__card {
     text-align: center;
