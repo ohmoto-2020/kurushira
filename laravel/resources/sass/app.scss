@@ -412,6 +412,9 @@
           margin: 1.3rem auto;
           width: 170px;
           text-align: left;
+          @include sp-layout() {
+            width: 150px;
+          }
           select {
             height: 25px;
           }

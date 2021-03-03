@@ -541,6 +541,12 @@ a {
   text-align: left;
 }
 
+@media screen and (max-width: 540px) {
+  .section__form__card__maker__box {
+    width: 150px;
+  }
+}
+
 .section__form__card__maker__box select {
   height: 25px;
 }
