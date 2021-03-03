@@ -205,6 +205,7 @@
   text-align: center;
   @include sp-layout() {
     overflow: hidden;
+    margin-top: 8rem;
   }
   .note {
     color: red;
@@ -453,37 +454,44 @@
 // -----------------------
 .user {
   margin-bottom: 5rem;
-  &__link {
-    &__send {
-      display: inline-block;
-      width: 220px;
-      height: 50px;
-      color: $white;
-      margin: 0 4rem;
-      font-size: 1rem;
-      font-weight: bold;
-      background-color: $main;
-      line-height: 50px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      box-shadow: $box-shadow;
-      border-radius: 5px;
-      &:hover {
-        background-color: rgba(rgb(15, 202, 202), 0.7);
-        transition: 0.2s;
-      }
+  @include sp-layout() {
+    margin-bottom: 3rem;
+  }
+  &__send {
+    display: inline-block;
+    width: 220px;
+    height: 50px;
+    color: $white;
+    margin: 0 4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: $main;
+    line-height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    @include sp-layout() {
+      margin-bottom: 1rem;
+    }
+    &:hover {
+      background-color: rgba(rgb(15, 202, 202), 0.7);
+      transition: 0.2s;
     }
   }
 }
 .history-title {
   color: $black;
-  margin-top: 3rem;
   display: flex;
   justify-content: center;
   p {
     font-size: 1.4rem;
     margin: 0 2rem;
+    @include sp-layout() {
+      font-size: 1rem;
+      margin: 0 1rem;
+    }
   }
 }
 .selected-value {
@@ -493,6 +501,9 @@
     margin: 0 auto;
     box-shadow: $box-shadow;
     border-radius: 5px;
+    @include sp-layout() {
+      width: 90%;
+    }
     &__header {
       color: $white;
       font-size: 1rem;
@@ -508,6 +519,10 @@
       color: $gray;
       display: flex;
       justify-content: space-around;
+      @include sp-layout() {
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
   }
 }

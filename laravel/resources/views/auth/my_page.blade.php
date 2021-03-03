@@ -4,10 +4,8 @@
 @section('content')
 <div class="container">
   <div class="user">
-    <div class="user__link">
-      <a class="user__link__send" href="{{ route('edit') }}"><i class="fas fa-user-edit"></i>ユーザー情報の変更</a>
-      <a class="user__link__send" href="{{ route('my_image') }}"><i class="far fa-image fa-lg	"></i>提供画像一覧</a>
-    </div>
+    <a class="user__send" href="{{ route('edit') }}"><i class="fas fa-user-edit"></i>ユーザー情報の変更</a>
+    <a class="user__send" href="{{ route('my_image') }}"><i class="far fa-image fa-lg	"></i>提供画像一覧</a>
   </div>
   @if(!empty($match_cars))
     <div class="history-title">
