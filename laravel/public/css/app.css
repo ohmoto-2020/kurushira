@@ -46,6 +46,8 @@ a {
   .home-body {
     background-image: url(/images/sp_bg.jpg?5374306ac21619487aa436d889e4c31c);
     background-position: unset;
+    position: absolute;
+    bottom: 0;
   }
 }
 
