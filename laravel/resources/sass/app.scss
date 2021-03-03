@@ -557,10 +557,17 @@
         .swiper-container{
           .swiper-wrapper {
             width: 360px;
+            @include sp-layout() {
+              width: 300px;
+            }
             .swiper-slide {
               width: 360px;
               height: 270px;
               box-shadow: $box-shadow;
+              @include sp-layout() {
+                width: 300px;
+                height: 210px;
+              }
             }
           }
           .swiper-pagination {
@@ -583,6 +590,10 @@
         width: 360px;
         height: 270px;
         background-color: rgb(198,198,198);
+        @include sp-layout() {
+          width: 300px;
+          height: 210px;
+        }
         .far {
           color: $white;
           margin: auto;
