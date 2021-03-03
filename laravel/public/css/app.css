@@ -701,6 +701,12 @@ a {
   margin: 4rem 2rem 0 2rem;
 }
 
+@media screen and (max-width: 540px) {
+  .match-container__car__box {
+    margin: 2rem 2rem 0 2rem;
+  }
+}
+
 .match-container__car__box__value {
   color: black;
 }

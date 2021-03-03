@@ -546,6 +546,9 @@
     &__box {
       text-align: left;
       margin: 4rem 2rem 0 2rem;
+      @include sp-layout() {
+        margin: 2rem 2rem 0 2rem;
+      }
       &__value {
         color: $black;
         &__name {
