@@ -8,7 +8,7 @@
   <form action="{{ action('CarController@post_car') }}" class="section__form" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="section__form__card">
-      <div class="section__form__card__header"><i class="fas fa-car"></i>STEP1<span>車種を選択してください</span></div>
+      <div class="section__form__card__header"><i class="fas fa-car"></i>STEP1<br class="br"><span>車種を選択してください</span></div>
       <div class="section__form__card__maker">
         @foreach($car_array as $maker=>$cars)
         <div class="section__form__card__maker__box">
@@ -32,7 +32,7 @@
     </div>
     <div class="section__form__arrow">&#9662;</div>
     <div class="section__form__card">
-      <p class="section__form__card__header"><i class="fas fa-camera"></i>STEP2<span>画像を選択してください</span></p>
+      <p class="section__form__card__header"><i class="fas fa-camera"></i>STEP2<br class="br"><span>画像を選択してください</span></p>
       <div class="section__form__card__file">
         <input type="file" name="file" accept="image/*">
       </div>

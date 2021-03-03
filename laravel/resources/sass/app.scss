@@ -372,6 +372,9 @@
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: bold;
+    @include sp-layout() {
+      font-size: 1.5rem;
+    }
     span {
       font-size: 1rem;
       font-weight: normal;
@@ -380,6 +383,9 @@
   &__form {
     width: 60%;
     margin: 0 auto;
+    @include sp-layout() {
+      width: 90%;
+    }
     &__arrow {
       font-size: 2rem;
       margin: 2rem 0;
@@ -657,6 +663,9 @@
     margin: 0 auto;
     box-shadow: $box-shadow;
     border-radius: 5px;
+    @include sp-layout() {
+      width: 90%;
+    }
     &__header {
       font-size: 1.7rem;
       padding: 0.5rem 0;
@@ -664,6 +673,9 @@
       border-bottom: solid 1px $header;
       box-shadow: $box-shadow;
       border-radius: 5px 5px 0 0;
+      @include sp-layout() {
+        font-size: 1.3rem;
+      }
     }
     &__body {
       display: inline-block;
@@ -676,11 +688,20 @@
         display: flex;
         justify-content: space-around;
         padding-bottom: 1rem;
+        @include sp-layout() {
+          flex-direction: column;
+          p {
+            font-size: 1rem;
+          }
+        }
       }
       &__image {
         width: 600px;
         box-shadow: $box-shadow;
         border-radius: 5px;
+        @include sp-layout() {
+          width: 250px;
+        }
       }
     }
   }

@@ -485,6 +485,12 @@ a {
   font-weight: bold;
 }
 
+@media screen and (max-width: 540px) {
+  .section__title {
+    font-size: 1.5rem;
+  }
+}
+
 .section__title span {
   font-size: 1rem;
   font-weight: normal;
@@ -493,6 +499,12 @@ a {
 .section__form {
   width: 60%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 540px) {
+  .section__form {
+    width: 90%;
+  }
 }
 
 .section__form__arrow {
@@ -798,6 +810,12 @@ a {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 540px) {
+  .offer-container__card {
+    width: 90%;
+  }
+}
+
 .offer-container__card__header {
   font-size: 1.7rem;
   padding: 0.5rem 0;
@@ -805,6 +823,12 @@ a {
   border-bottom: solid 1px #078080;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px 5px 0 0;
+}
+
+@media screen and (max-width: 540px) {
+  .offer-container__card__header {
+    font-size: 1.3rem;
+  }
 }
 
 .offer-container__card__body {
@@ -822,10 +846,26 @@ a {
   padding-bottom: 1rem;
 }
 
+@media screen and (max-width: 540px) {
+  .offer-container__card__body__name {
+    flex-direction: column;
+  }
+
+  .offer-container__card__body__name p {
+    font-size: 1rem;
+  }
+}
+
 .offer-container__card__body__image {
   width: 600px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .offer-container__card__body__image {
+    width: 250px;
+  }
 }
 
 .offer-container .button {
