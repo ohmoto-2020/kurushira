@@ -4,6 +4,8 @@
 
 URL:https://pf-kurushira.com
 
+Qiita:https://qiita.com/ohmoto_2020/items/932af10bd1c30049038d
+
 ## 制作背景
 近年の「若者の車離れ」という原因の一つに、
 「一目惚れするような車に出会えていない」という問題があるからではないか、と考えたからです。
