@@ -13,6 +13,11 @@ class Car extends Model
     {
         return $this->hasMany('App\Models\CarImage');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Models\Like');
+    }
     // 車種配列
     public static function getCarsFromDb()
     {
