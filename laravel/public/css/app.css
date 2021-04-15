@@ -713,6 +713,17 @@ a {
   }
 }
 
+.match-container__car__box .btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.match-container__car__box .red-text {
+  color: red;
+}
+
 .match-container__car__box__value {
   color: black;
 }

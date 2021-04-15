@@ -552,6 +552,15 @@
       @include sp-layout() {
         margin: 2rem 2rem 0 2rem;
       }
+      .btn {
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+      }
+      .red-text {
+        color: red;
+      }
       &__value {
         color: $black;
         &__name {

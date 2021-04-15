@@ -6,11 +6,19 @@
         <p class="match-container__car__box__value__name">車種名:{{ $car['name'] }}</p>
         <p>メーカー:{{ $car['maker'] }}</p>
         <p>価格:{{ $car['price'] }}万円</p>
+        <div class="card-body pt-0 pb-2 pl-3">
+          <div class="card-text">
+            <article-like :initial-is-liked-by='@json($car->isLikedBy(Auth::user()))' :initial-count-likes='@json($car->count_likes)' :authorized='@json(Auth::check())' endpoint="{{ route('like', ['car' => $car]) }}">
+            </article-like>
+          </div>
+        </div>
       </div>
       @if(empty($car->car_images->toArray()))
-        <div class="no-image">
-          <i class="far fa-image fa-4x"><p>No&nbsp;Image</p></i>
-        </div>
+      <div class="no-image">
+        <i class="far fa-image fa-4x">
+          <p>No&nbsp;Image</p>
+        </i>
+      </div>
       @else
       <div class="swiper-custom-parent">
         <div class="swiper-container">

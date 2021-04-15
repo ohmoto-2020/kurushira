@@ -40,3 +40,6 @@ Route::get('/result', 'CarController@result')->name('result');
 // 車の画像提供
 Route::get('/post_car', 'CarController@post_car')->name('post_car');
 Route::post('/post_car', 'CarController@create')->name('create');
+// お気に入り
+Route::put('/{car}/like', 'CarController@like')->name('like');
+Route::delete('/{car}/like', 'CarController@unlike')->name('unlike');

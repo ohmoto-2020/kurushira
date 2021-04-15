@@ -5,6 +5,9 @@ namespace App\Models;
 // use GuzzleHttp\Psr7\Request;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\User;
+
 
 class Car extends Model
 {
@@ -13,11 +16,22 @@ class Car extends Model
     {
         return $this->hasMany('App\Models\CarImage');
     }
-
-    public function likes()
+    public function likes():BelongsToMany
     {
-        return $this->hasMany('App\Models\Like');
+        return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }
+
+    // いいね済みかどうかの判定
+    public function isLikedBy(User $user): bool
+    {
+        return (bool)$this->likes->where('id', $user->id)->count();
+    }
+    // いいね数カウント
+    public function getCountLikesAttribute(): int
+    {
+        return $this->likes->count();
+    }
+
     // 車種配列
     public static function getCarsFromDb()
     {

@@ -122,4 +122,22 @@ class CarController extends Controller
             return redirect('post_car');
         }
     }
+
+    public function like(Request $request, Car $car)
+    {
+        $car->likes()->detach($request->user()->id);
+        $car->likes()->attach($request->user()->id);
+        return [
+            'id' => $car->id,
+            'countLikes' => $car->count_likes
+        ];
+    }
+    public function unlike(Request $request, Car $car)
+    {
+        $car->likes()->detach($request->user()->id);
+        return [
+            'id' => $car->id,
+            'countLikes' => $car->count_likes
+        ];
+    }
 }
