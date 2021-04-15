@@ -6,7 +6,7 @@
         <p class="match-container__car__box__value__name">車種名:{{ $car['name'] }}</p>
         <p>メーカー:{{ $car['maker'] }}</p>
         <p>価格:{{ $car['price'] }}万円</p>
-        <div class="card-body pt-0 pb-2 pl-3">
+        <div class="card-body">
           <div class="card-text">
             <article-like :initial-is-liked-by='@json($car->isLikedBy(Auth::user()))' :initial-count-likes='@json($car->count_likes)' :authorized='@json(Auth::check())' endpoint="{{ route('like', ['car' => $car]) }}">
             </article-like>
