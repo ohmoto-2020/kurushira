@@ -5,15 +5,14 @@
  */
 
 // require('./bootstrap');
-//==========ここから追加==========
 import './bootstrap'
 import Vue from 'vue'
-import ArticleLike from './components/ArticleLike'
+import CarLike from './components/CarLike'
 
 const app = new Vue({
   el: '#app',
   components: {
-    ArticleLike,
+    CarLike,
   }
 })
 
