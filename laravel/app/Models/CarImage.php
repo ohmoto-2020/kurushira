@@ -37,7 +37,6 @@ class CarImage extends Model
     public function deleteCarImage(Request $request)
     {
         $image = $request->image;
-
         $s3_delete = Storage::disk('s3')->delete($image);
         $db_delete = CarImage::where('image', $image)->delete();
     }

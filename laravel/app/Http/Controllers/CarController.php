@@ -9,6 +9,7 @@ use App\Models\Like;
 use App\Models\History;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CarImage;
+use App\Models\Report;
 use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
@@ -74,9 +75,6 @@ class CarController extends Controller
         \Session::flash('message', '削除しました');
         return redirect('my_image');
     }
-
-    // 通報された画像削除
-    // public function
 
     // 提供画像選択画面
     public function post_car()
@@ -157,6 +155,13 @@ class CarController extends Controller
     {
         $carImage->reports()->detach($request->user()->id);
         $carImage->reports()->attach($request->user()->id);
+
+        $report = Report::where('car_image_id', '=', $carImage->id)->get();
+        // 通報が5件溜まると削除
+        if ($report->count() >= 5) {
+            $request->image = $carImage->image;
+            $carImage->deleteCarImage($request);
+        }
 
         return [
             'id' => $carImage->id,
