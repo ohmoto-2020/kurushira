@@ -2124,6 +2124,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       type: String
     }
   },
+  mounted: function mounted() {
+    //Swiper用のクラス指定
+    var mySwiper = new Swiper('.swiper-container', {
+      // カスタマイズ用、追加オプション
+      //direction: 'vertical',//←スライド方向のオプション
+      // ページネーション用のクラス指定
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      //ナビゲーション用のクラス指定
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+  },
   data: function data() {
     return {
       isReportedBy: this.initialIsReportedBy,
@@ -38627,8 +38643,7 @@ var render = function() {
           [_vm._v("通報")]
         )
       ]
-    ),
-    _vm._v("\n  " + _vm._s(_vm.countReports) + "\n")
+    )
   ])
 }
 var staticRenderFns = []
@@ -51164,22 +51179,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//Swiper用のクラス指定
-var mySwiper = new Swiper('.swiper-container', {
-  // カスタマイズ用、追加オプション
-  //direction: 'vertical',//←スライド方向のオプション
-  loop: true,
-  //←ループオプション
-  // ページネーション用のクラス指定
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  //ナビゲーション用のクラス指定
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }
-});
+
 
 /***/ }),
 

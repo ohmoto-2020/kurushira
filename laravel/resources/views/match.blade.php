@@ -22,12 +22,10 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             @foreach($car->car_images as $image)
-            <div class="images">
-              <img src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$image['image']}}" class="swiper-slide">
-              <div class="report">
-                <car-report :initial-is-reported-by='@json($image->isReportedBy(Auth::user()))' :initial-count-reports='@json($image->count_reports)' :authorized='@json(Auth::check())' endpoint="{{ route('report', ['car_image' => $image]) }}">
-                </car-report>
-              </div>
+            <div class="swiper-slide">
+              <img src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$image['image']}}">
+              <car-report :initial-is-reported-by='@json($image->isReportedBy(Auth::user()))' :initial-count-reports='@json($image->count_reports)' :authorized='@json(Auth::check())' endpoint="{{ route('report', ['car_image' => $image]) }}">
+              </car-report>
             </div>
             @endforeach
           </div>

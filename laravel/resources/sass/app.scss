@@ -573,6 +573,11 @@
       .report {
         background-color: red;
         display: inline;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45px;
+
       }
       .report-on {
         background-color: #c6c6c6;
@@ -591,6 +596,9 @@
               @include sp-layout() {
                 width: 300px;
                 height: 210px;
+              }
+              img {
+                width: 100%;
               }
             }
           }

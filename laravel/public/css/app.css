@@ -739,6 +739,10 @@ a {
 .match-container__car__box .report {
   background-color: red;
   display: inline;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 45px;
 }
 
 .match-container__car__box .report-on {
@@ -766,6 +770,10 @@ a {
     width: 300px;
     height: 210px;
   }
+}
+
+.match-container__car__box .swiper-custom-parent .swiper-container .swiper-wrapper .swiper-slide img {
+  width: 100%;
 }
 
 .match-container__car__box .swiper-custom-parent .swiper-container .swiper-pagination {
