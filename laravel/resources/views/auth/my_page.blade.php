@@ -6,6 +6,7 @@
   <div class="user">
     <a class="user__send" href="{{ route('edit') }}"><i class="fas fa-user-edit"></i>ユーザー情報の変更</a>
     <a class="user__send" href="{{ route('my_image') }}"><i class="far fa-image fa-lg	"></i>提供画像一覧</a>
+    <a class="user__send" href="{{ route('favorite') }}"><i class="fas fa-heart fa-lg	"></i>お気に入り</a>
   </div>
   @if(!empty($match_cars))
     <div class="history-title">
@@ -23,5 +24,5 @@
     <p class="not-find">履歴はありません</p>
   @endif
 </div>
-<script src="{{ asset('/js/swiper.js') }}"></script>
+<!-- <script src="{{ asset('/js/swiper.js') }}"></script> -->
 @endsection
