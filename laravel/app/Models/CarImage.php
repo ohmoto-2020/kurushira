@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 
 class CarImage extends Model
 {
@@ -30,5 +32,13 @@ class CarImage extends Model
     public function getCountReportsAttribute(): int
     {
         return $this->reports->count();
+    }
+    // 画像削除
+    public function deleteCarImage(Request $request)
+    {
+        $image = $request->image;
+
+        $s3_delete = Storage::disk('s3')->delete($image);
+        $db_delete = CarImage::where('image', $image)->delete();
     }
 }

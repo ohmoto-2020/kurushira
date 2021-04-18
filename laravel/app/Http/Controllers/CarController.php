@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Like;
 use App\Models\History;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CarImage;
@@ -67,15 +68,15 @@ class CarController extends Controller
     }
 
     // 提供画像削除
-    public function delete(Request $request)
+    public function delete_post_image(CarImage $carImage, Request $request)
     {
-        $image = $request->image;
-
-        $s3_delete = Storage::disk('s3')->delete($image);
-        $db_delete = CarImage::where('image', $image)->delete();
+        $carImage->deleteCarImage($request);
         \Session::flash('message', '削除しました');
         return redirect('my_image');
     }
+
+    // 通報された画像削除
+    // public function
 
     // 提供画像選択画面
     public function post_car()
@@ -134,7 +135,7 @@ class CarController extends Controller
             'countLikes' => $car->count_likes
         ];
     }
-    // いいねを外す
+    // いいね解除
     public function unlike(Request $request, Car $car)
     {
         $car->likes()->detach($request->user()->id);
@@ -145,12 +146,13 @@ class CarController extends Controller
     }
 
     // お気に入り一覧を表示
-    // public function favorite() {
+    // public function favorite(Request $request, Car $car) {
     //     $user_id = Auth::id();
     //     $favorite = Like::where('user_id',$user_id)->get();
+    //     // $car_id =$favorite->;
     //     return view('auth.favorite',['favorite' => $favorite]);
     // }
-
+    // 通報する
     public function report(Request $request, CarImage $carImage)
     {
         $carImage->reports()->detach($request->user()->id);
@@ -161,6 +163,7 @@ class CarController extends Controller
             'countReports' => $carImage->count_reports,
         ];
     }
+    // 通報解除
     public function unreport(Request $request, CarImage $carImage)
     {
         $carImage->reports()->detach($request->user()->id);
