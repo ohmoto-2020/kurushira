@@ -4,7 +4,7 @@
       type="button"
       class="btn report shadow-none"
     >
-    <p :class="{'report-on':this.isReportedBy}" @click="clickReport">通報</p>
+    <p :class="{'report-on':this.isReportedBy}" @click="clickReport">{{message}}</p>
     </button>
     <!-- {{ countReports }} -->
   </div>
@@ -49,6 +49,7 @@ export default {
   },
   data() {
     return {
+      message: this.initialIsReportedBy? '通報済み' : '通報',
       isReportedBy: this.initialIsReportedBy,
       countReports: this.initialCountReports,
     }
@@ -69,12 +70,14 @@ export default {
 
       this.isReportedBy = true
       this.countReports = response.data.countReports
+      this.message = '通報済み';
     },
     async unreport() {
       const response = await axios.delete(this.endpoint)
 
       this.isReportedBy = false
       this.countReports = response.data.countReports
+      this.message = '通報';
     },
   },
 }

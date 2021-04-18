@@ -2142,6 +2142,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
+      message: this.initialIsReportedBy ? '通報済み' : '通報',
       isReportedBy: this.initialIsReportedBy,
       countReports: this.initialCountReports
     };
@@ -2171,8 +2172,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context.sent;
                 _this.isReportedBy = true;
                 _this.countReports = response.data.countReports;
+                _this.message = '通報済み';
 
-              case 5:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -2196,8 +2198,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context2.sent;
                 _this2.isReportedBy = false;
                 _this2.countReports = response.data.countReports;
+                _this2.message = '通報';
 
-              case 5:
+              case 6:
               case "end":
                 return _context2.stop();
             }
@@ -38640,7 +38643,7 @@ var render = function() {
             class: { "report-on": this.isReportedBy },
             on: { click: _vm.clickReport }
           },
-          [_vm._v("通報")]
+          [_vm._v(_vm._s(_vm.message))]
         )
       ]
     )
