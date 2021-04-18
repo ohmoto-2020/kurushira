@@ -713,17 +713,6 @@ a {
   }
 }
 
-.match-container__car__box .btn {
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.match-container__car__box .red-text {
-  color: red;
-}
-
 .match-container__car__box__value {
   color: black;
 }
@@ -731,6 +720,29 @@ a {
 .match-container__car__box__value__name {
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.match-container__car__box .btn {
+  cursor: pointer;
+}
+
+.match-container__car__box .heart {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.match-container__car__box .red-text {
+  color: red;
+}
+
+.match-container__car__box .report {
+  background-color: red;
+  display: inline;
+}
+
+.match-container__car__box .report-on {
+  background-color: #c6c6c6;
 }
 
 .match-container__car__box .swiper-custom-parent .swiper-container .swiper-wrapper {

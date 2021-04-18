@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\History;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use App\Models\CarImage;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,14 +27,14 @@ class CarController extends Controller
         } else {
             $match_cars = Car::getSearchCarsFromDb($request);
             $selected_value =
-            [
-                'style' => $request->style,
-                'size' => $request->size,
-                'country' => $request->country,
-                'uses' => $request->uses
-            ];
+                [
+                    'style' => $request->style,
+                    'size' => $request->size,
+                    'country' => $request->country,
+                    'uses' => $request->uses
+                ];
 
-            return view('page.result', ['match_cars' => $match_cars,'selected_value' => $selected_value]);
+            return view('page.result', ['match_cars' => $match_cars, 'selected_value' => $selected_value]);
         }
     }
 
@@ -43,35 +42,37 @@ class CarController extends Controller
     public function history()
     {
         $match_cars = History::getHistoryHistoriesFromDb();
-        if(empty($match_cars)){
+        if (empty($match_cars)) {
             return view('auth.my_page', ['match_cars' => $match_cars]);
         } else {
             $history_value =
-            [
-                'style' => $match_cars[1][0]['style'],
-                'size' => $match_cars[1][0]['size'],
-                'country' => $match_cars[1][0]['country'],
-                'uses' => $match_cars[1][0]['uses'],
-                'updated_at' => $match_cars[1][0]['updated_at'],
-            ];
+                [
+                    'style' => $match_cars[1][0]['style'],
+                    'size' => $match_cars[1][0]['size'],
+                    'country' => $match_cars[1][0]['country'],
+                    'uses' => $match_cars[1][0]['uses'],
+                    'updated_at' => $match_cars[1][0]['updated_at'],
+                ];
             $match_cars = $match_cars[0];
-            return view('auth.my_page', ['match_cars' => $match_cars,'selected_value' => $history_value]);
+            return view('auth.my_page', ['match_cars' => $match_cars, 'selected_value' => $history_value]);
         }
     }
 
     // 個々の提供画像一覧
-    public function my_image() {
+    public function my_image()
+    {
         $user_id = Auth::id();
-        $my_images = CarImage::where('user_id',$user_id)->get();
-        return view('auth.my_image',['my_images' => $my_images]);
+        $my_images = CarImage::where('user_id', $user_id)->get();
+        return view('auth.my_image', ['my_images' => $my_images]);
     }
 
     // 提供画像削除
-    public function delete(Request $request) {
+    public function delete(Request $request)
+    {
         $image = $request->image;
 
         $s3_delete = Storage::disk('s3')->delete($image);
-        $db_delete = CarImage::where('image',$image)->delete();
+        $db_delete = CarImage::where('image', $image)->delete();
         \Session::flash('message', '削除しました');
         return redirect('my_image');
     }
@@ -108,7 +109,7 @@ class CarController extends Controller
                     $post->user_id = Auth::id();
                     $post->save();
                     $car = CarImage::orderBy('updated_at', 'desc')->take(1)->get();
-                    return view('page.offer', ['cars' => $car,'car_name' => $cars]);
+                    return view('page.offer', ['cars' => $car, 'car_name' => $cars]);
                 } else {
                     \Session::flash('message', '画像を選択してください');
                     return redirect('post_car');
@@ -123,6 +124,7 @@ class CarController extends Controller
         }
     }
 
+    // いいねする
     public function like(Request $request, Car $car)
     {
         $car->likes()->detach($request->user()->id);
@@ -132,12 +134,40 @@ class CarController extends Controller
             'countLikes' => $car->count_likes
         ];
     }
+    // いいねを外す
     public function unlike(Request $request, Car $car)
     {
         $car->likes()->detach($request->user()->id);
         return [
             'id' => $car->id,
             'countLikes' => $car->count_likes
+        ];
+    }
+
+    // お気に入り一覧を表示
+    // public function favorite() {
+    //     $user_id = Auth::id();
+    //     $favorite = Like::where('user_id',$user_id)->get();
+    //     return view('auth.favorite',['favorite' => $favorite]);
+    // }
+
+    public function report(Request $request, CarImage $carImage)
+    {
+        $carImage->reports()->detach($request->user()->id);
+        $carImage->reports()->attach($request->user()->id);
+
+        return [
+            'id' => $carImage->id,
+            'countReports' => $carImage->count_reports,
+        ];
+    }
+    public function unreport(Request $request, CarImage $carImage)
+    {
+        $carImage->reports()->detach($request->user()->id);
+
+        return [
+            'id' => $carImage->id,
+            'countReports' => $carImage->count_reports,
         ];
     }
 }

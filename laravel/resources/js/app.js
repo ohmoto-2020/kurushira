@@ -8,11 +8,14 @@
 import './bootstrap'
 import Vue from 'vue'
 import CarLike from './components/CarLike'
+import CarReport from './components/CarReport'
+import './swiper';
 
 const app = new Vue({
   el: '#app',
   components: {
     CarLike,
+    CarReport
   }
 })
 

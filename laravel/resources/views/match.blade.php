@@ -6,11 +6,9 @@
         <p class="match-container__car__box__value__name">車種名:{{ $car['name'] }}</p>
         <p>メーカー:{{ $car['maker'] }}</p>
         <p>価格:{{ $car['price'] }}万円</p>
-        <div class="card-body">
-          <div class="card-text">
-            <article-like :initial-is-liked-by='@json($car->isLikedBy(Auth::user()))' :initial-count-likes='@json($car->count_likes)' :authorized='@json(Auth::check())' endpoint="{{ route('like', ['car' => $car]) }}">
-            </article-like>
-          </div>
+        <div class="match-container__car__box__value__favorite">
+          <car-like :initial-is-liked-by='@json($car->isLikedBy(Auth::user()))' :initial-count-likes='@json($car->count_likes)' :authorized='@json(Auth::check())' endpoint="{{ route('like', ['car' => $car]) }}">
+          </car-like>
         </div>
       </div>
       @if(empty($car->car_images->toArray()))
@@ -24,7 +22,13 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             @foreach($car->car_images as $image)
-            <img src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$image['image']}}" class="swiper-slide">
+            <div class="images">
+              <img src="https://kurushira.s3-ap-northeast-1.amazonaws.com/{{$image['image']}}" class="swiper-slide">
+              <div class="report">
+                <car-report :initial-is-reported-by='@json($image->isReportedBy(Auth::user()))' :initial-count-reports='@json($image->count_reports)' :authorized='@json(Auth::check())' endpoint="{{ route('report', ['car_image' => $image]) }}">
+                </car-report>
+              </div>
+            </div>
             @endforeach
           </div>
           <!-- ↓ページネーション -->

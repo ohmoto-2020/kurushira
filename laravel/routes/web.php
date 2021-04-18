@@ -31,6 +31,8 @@ Route::post('/my_image', 'CarController@delete')->name('delete');
 // ユーザー情報編集
 Route::get('/edit', 'UserController@edit')->name('edit');
 Route::post('/edit', 'UserController@editValidates')->name('editValidates');
+// お気に入り一覧
+Route::get('/favorite', 'CarController@favorite')->name('favorite');
 // サイト詳細
 Route::get('/about', 'HomeController@about')->name('about');
 // 車検索
@@ -43,3 +45,6 @@ Route::post('/post_car', 'CarController@create')->name('create');
 // お気に入り
 Route::put('/{car}/like', 'CarController@like')->name('like');
 Route::delete('/{car}/like', 'CarController@unlike')->name('unlike');
+// 通報
+Route::put('/{car_image}/report', 'CarController@report')->name('report');
+Route::delete('/{car_image}/report', 'CarController@unreport')->name('unreport');

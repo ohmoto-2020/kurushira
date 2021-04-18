@@ -552,21 +552,30 @@
       @include sp-layout() {
         margin: 2rem 2rem 0 2rem;
       }
-      .btn {
-        border: none;
-        outline: none;
-        background: transparent;
-        cursor: pointer;
-      }
-      .red-text {
-        color: red;
-      }
       &__value {
         color: $black;
         &__name {
           font-size: 1.2rem;
           font-weight: bold;
         }
+      }
+      .btn {
+        cursor: pointer;
+      }
+      .heart {
+        border: none;
+        outline: none;
+        background: transparent;
+      }
+      .red-text {
+        color: red;
+      }
+      .report {
+        background-color: red;
+        display: inline;
+      }
+      .report-on {
+        background-color: #c6c6c6;
       }
       .swiper-custom-parent {
         .swiper-container{
