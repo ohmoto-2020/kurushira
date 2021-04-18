@@ -2,7 +2,7 @@
   <div>
     <button
       type="button"
-      class="btn shadow-none"
+      class="btn heart shadow-none"
     >
       <i class="far fa-heart mr-1" :class="{'fas fa-heart mr-1 red-text':this.isLikedBy}"
       @click="clickLike"
