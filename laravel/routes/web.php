@@ -48,3 +48,5 @@ Route::delete('/{car}/like', 'CarController@unlike')->name('unlike');
 // 通報
 Route::put('/{car_image}/report', 'CarController@report')->name('report');
 Route::delete('/{car_image}/report', 'CarController@unreport')->name('unreport');
+// news
+Route::get('/news', 'NewsController@news')->name('news');

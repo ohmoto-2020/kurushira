@@ -1045,3 +1045,70 @@ a {
   list-style: decimal;
 }
 
+.news-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 540px) {
+  .news-container {
+    text-align: center;
+  }
+}
+
+.news-container h2 {
+  color: #646464;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 540px) {
+  .news-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    margin-top: 7rem;
+  }
+}
+
+.news-container__table {
+  width: 100%;
+}
+
+.news-container__table__tr {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: solid 1px #646464;
+  display: flex;
+}
+
+@media screen and (max-width: 540px) {
+  .news-container__table__tr {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.news-container__table__tr__image {
+  width: 300px;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 540px) {
+  .news-container__table__tr__image {
+    margin-right: 0;
+  }
+}
+
+.news-container__table__tr__title {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 540px) {
+  .news-container__table__tr__title {
+    font-size: 1rem;
+    display: block;
+    text-align: justify;
+    margin: 0 5%;
+  }
+}
+

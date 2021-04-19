@@ -829,3 +829,53 @@
     }
   }
 }
+
+// -----------------------
+// news
+// -----------------------
+.news-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  @include sp-layout() {
+    text-align: center;
+  }
+  h2 {
+    color: $gray;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    @include sp-layout() {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+      margin-top: 7rem;
+    }
+  }
+  &__table {
+    width: 100%;
+    &__tr {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: solid 1px $gray;
+      display: flex;
+      @include sp-layout() {
+        display: flex;
+        flex-direction: column;
+      }
+      &__image {
+        width: 300px;
+        margin-right: 2rem;
+        @include sp-layout() {
+          margin-right: 0;
+        }
+      }
+      &__title {
+        font-size: 1.5rem;
+        @include sp-layout() {
+          font-size: 1rem;
+          display: block;
+          text-align: justify;
+          margin: 0 5%;
+        }
+      }
+    }
+  }
+}
