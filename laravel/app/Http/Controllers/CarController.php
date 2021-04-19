@@ -144,11 +144,11 @@ class CarController extends Controller
     }
 
     // お気に入り一覧を表示
-    public function favorite(Request $request, Car $car)
+    public function favorite()
     {
         $user_id = Auth::id();
         $favorite = Like::where('user_id', $user_id)->get();
-        
+
         return view('auth.favorite', ['favorites' => $favorite]);
     }
 
