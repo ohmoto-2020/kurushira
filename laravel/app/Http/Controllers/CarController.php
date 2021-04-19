@@ -126,7 +126,9 @@ class CarController extends Controller
     // いいねする
     public function like(Request $request, Car $car)
     {
+        // 1人のユーザーが1台に複数回いいねを付けられないようにするため、まずはdetach
         $car->likes()->detach($request->user()->id);
+        // carモデルとリクエストを送信したユーザーのuserモデルの両者を紐づけるlikesテーブルのレコードが新規登録される
         $car->likes()->attach($request->user()->id);
         return [
             'id' => $car->id,
@@ -162,6 +164,7 @@ class CarController extends Controller
 
         // 通報が5件溜まると削除
         if ($report->count() >= 5) {
+            // deleteCarImageに渡すため「$carImage->image」に変更
             $request->image = $carImage->image;
             $carImage->deleteCarImage($request);
         }

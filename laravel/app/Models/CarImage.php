@@ -33,6 +33,7 @@ class CarImage extends Model
     {
         return $this->reports->count();
     }
+
     // 画像削除
     public function deleteCarImage(Request $request)
     {
