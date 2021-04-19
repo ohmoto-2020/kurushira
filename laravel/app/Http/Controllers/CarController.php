@@ -144,12 +144,14 @@ class CarController extends Controller
     }
 
     // お気に入り一覧を表示
-    // public function favorite(Request $request, Car $car) {
-    //     $user_id = Auth::id();
-    //     $favorite = Like::where('user_id',$user_id)->get();
-    //     // $car_id =$favorite->;
-    //     return view('auth.favorite',['favorite' => $favorite]);
-    // }
+    public function favorite(Request $request, Car $car)
+    {
+        $user_id = Auth::id();
+        $favorite = Like::where('user_id', $user_id)->get();
+        
+        return view('auth.favorite', ['favorites' => $favorite]);
+    }
+
     // 通報する
     public function report(Request $request, CarImage $carImage)
     {
@@ -157,6 +159,7 @@ class CarController extends Controller
         $carImage->reports()->attach($request->user()->id);
 
         $report = Report::where('car_image_id', '=', $carImage->id)->get();
+
         // 通報が5件溜まると削除
         if ($report->count() >= 5) {
             $request->image = $carImage->image;
