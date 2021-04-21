@@ -11,7 +11,7 @@
         <img class="news-container__table__tr__image" src="{{$data['thumbnail']}}">
       </td>
       <td>
-        <a class="news-container__table__tr__title" href="{{$data['url']}}">{{$data['name']}}</a>
+        <a class="news-container__table__tr__title" href="{{$data['url']}}" target="_blank">{{$data['name']}}</a>
       </td>
     </tr>
     @endforeach
