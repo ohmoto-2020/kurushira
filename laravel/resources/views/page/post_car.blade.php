@@ -8,7 +8,7 @@
   <form action="{{ action('CarController@post_car') }}" class="section__form" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="section__form__card">
-      <div class="section__form__card__header"><i class="fas fa-car"></i>STEP1<br class="br"><span>車種を選択してください</span></div>
+      <div class="section__form__card__header"><i class="fas fa-car"></i>STEP1<br class="br"><span>メーカーと車種を選択してください</span></div>
       <div class="section__form__card__maker">
         @foreach($car_array as $maker=>$cars)
         <div class="section__form__card__maker__box">

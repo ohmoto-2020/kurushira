@@ -14,5 +14,5 @@
   </div>
 @endif
 
-<script src="{{ asset('/js/swiper.js') }}"></script>
+<!-- <script src="{{ asset('/js/swiper.js') }}"></script> -->
 @endsection
