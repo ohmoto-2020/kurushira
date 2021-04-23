@@ -16,7 +16,7 @@ class Car extends Model
     {
         return $this->hasMany('App\Models\CarImage');
     }
-    public function likes():BelongsToMany
+    public function likes(): BelongsToMany
     {
         return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }

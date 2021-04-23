@@ -18,25 +18,27 @@ class UserController extends Controller
 
         if ($validator->fails()) {
             return redirect('edit')
-            ->withErrors($validator)
-            ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         } else {
             return $this->update($request);
         }
     }
 
     //userデータの編集
-    public function edit() {
-        return view('auth.edit', ['user' => Auth::user() ]);
+    public function edit()
+    {
+        return view('auth.edit', ['user' => Auth::user()]);
     }
 
     //userデータの保存
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
 
         $user_form = $request->all();
         $user = Auth::user();
         // ゲストユーザーは変更できずに即リダイレクト
-        if($user->id == 1){
+        if ($user->id == 1) {
             abort(401);
             return redirect('edit');
         }
