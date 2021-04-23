@@ -160,7 +160,7 @@ class CarController extends Controller
         $carImage->reports()->detach($request->user()->id);
         $carImage->reports()->attach($request->user()->id);
 
-        $report = Report::where('car_image_id', '=', $carImage->id)->get();
+        $report = Report::where('car_image_id', $carImage->id)->get();
 
         // 通報が5件溜まると削除
         if ($report->count() >= 5) {
