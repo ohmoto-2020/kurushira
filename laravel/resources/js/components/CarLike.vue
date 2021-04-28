@@ -18,6 +18,7 @@ export default {
   props: {
     // いいねが押されているか
     initialIsLikedBy: {
+      type: Boolean,
       default: false,
     },
     // いいねの数
