@@ -13,12 +13,14 @@
 </template>
 
 <script>
+// bladeに渡す
 export default {
   props: {
+    // いいねが押されているか
     initialIsLikedBy: {
-      type: Boolean,
       default: false,
     },
+    // いいねの数
     initialCountLikes: {
       type: Number,
       default: 0,
@@ -31,6 +33,7 @@ export default {
       type: String,
     },
   },
+  // ここから処理が始まるイメージ
   data() {
     return {
       isLikedBy: this.initialIsLikedBy,
@@ -40,7 +43,7 @@ export default {
   methods: {
     clickLike() {
       if (!this.authorized) {
-        alert('いいね機能はログイン中のみ使用できます')
+        alert('通報機能はログイン中のみ使用できます')
         return
       }
 
@@ -48,7 +51,9 @@ export default {
         ? this.unlike()
         : this.like()
     },
+    // async = awaitを使うためにつける
     async like() {
+      // await = 処理が終わったら57行目以降を実行
       const response = await axios.put(this.endpoint)
 
       this.isLikedBy = true
